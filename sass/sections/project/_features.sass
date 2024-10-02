@@ -1,0 +1,100 @@
+section.features
+    padding-top: var(--section-gap)
+    padding-bottom: var(--section-gap)
+    background: $light-gradient
+
+    div.container
+        display: grid
+        grid-gap: var(--big-gap)
+        grid-column: breakout
+
+    div.list
+        display: grid
+        grid-template-columns: repeat(2, 1fr)
+        grid-gap: var(--gap)
+        +screen(m)
+            grid-template-columns: 1fr
+
+    div.feature
+        display: grid
+        align-content: start
+        grid-template-columns: max-content 1fr
+        grid-gap: var(--gap)
+        box-shadow: 10px 10px 30px 0 rgba(32, 64, 94, 0.05)
+        background: $white
+        padding: var(--gap)
+        border-radius: 8px
+        +screen(l)
+            grid-template-columns: 1fr
+        +screen(m)
+            grid-template-columns: max-content 1fr
+        +screen(s)
+            grid-template-columns: 1fr
+
+        div.image
+            img
+                width: 240px
+                margin-top: calc(var(--gap) * -1)
+                margin-left: calc(var(--gap) * -1)
+                object-fit: contain
+                object-position: left top
+                +screen(s)
+                    width: 100%
+                    max-width: 300px
+
+        div.text
+            display: grid
+            grid-gap: var(--gap)
+            margin-top: var(--gap)
+            +screen(l)
+                margin-top: unset
+            +screen(m)
+                margin-top: var(--gap)
+            +screen(s)
+                margin-top: unset
+
+            span
+                display: -webkit-box
+                -webkit-box-orient: vertical
+                -webkit-line-clamp: 4
+                overflow: hidden
+                text-overflow: ellipsis
+                &.more
+                    display: block
+                    overflow: visible
+                    & + a.more
+                        small
+                            &.show
+                                display: none
+                            &.hide
+                                display: inline
+                        div.icon
+                            transform: rotate(270deg)
+
+        a.more
+            display: grid
+            align-items: center
+            justify-items: end
+            grid-template-columns: auto max-content
+            grid-gap: var(--small-gap)
+            color: $dark-gray
+            font-weight: 500
+            small
+                text-align: right
+                &.show
+                    display: inline
+                &.hide
+                    display: none
+            div.icon
+                display: grid
+                align-items: center
+                justify-items: center
+                background: $dark-gray
+                border-radius: 20px
+                width: 40px
+                height: 40px
+                transform: rotate(90deg)
+                transition: all .3s
+                svg
+                    path
+                        stroke: white

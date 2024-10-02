@@ -1,0 +1,11 @@
+extends common/_layout.pug
+include sections/_callback.pug
+
+block links
+    link(rel="stylesheet", href="css/catalog.css")
+
+block content
+    include sections/catalog/_catalog.pug
+    include sections/_showroom.pug
+    include sections/_projects.pug
+    +callback('<span>Не начали</span> сотрудничать с нами?')

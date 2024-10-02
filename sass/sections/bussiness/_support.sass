@@ -1,0 +1,39 @@
+section.support
+    padding-top: var(--section-gap)
+    padding-bottom: var(--section-gap)
+
+    div.container
+        display: grid
+        grid-gap: var(--big-gap)
+        grid-column: breakout
+
+    div.tabs
+        display: grid
+        grid-gap: var(--big-gap)
+
+    div.swiper
+        width: 100%
+        min-width: 0
+
+    div.tabs_contents
+        div.swiper-slide
+            display: grid
+            grid-gap: var(--big-gap)
+            // grid-template-columns: 480px 1fr
+            grid-template-columns: repeat(2, 1fr)
+            +screen(m)
+                grid-template-columns: repeat(2, 1fr)
+            +screen(s)
+                grid-template-columns: 1fr
+
+            div.text
+                display: grid
+                align-content: center
+                grid-gap: var(--gap)
+                max-width: 640px
+            img
+                width: 100%
+                aspect-ratio: 4 / 3
+                object-fit: cover
+                object-position: center center
+                border-radius: 8px

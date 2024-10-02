@@ -1,0 +1,25 @@
+extends common/_layout.pug
+include sections/_callback.pug
+
+block links
+    link(rel="stylesheet", href="css/pages.css")
+
+block content
+    section.pages
+        div.container
+            ul.list
+                li: a(href="index.html", target="blank") Главная
+                li: a(href="service.html", target="blank") Услуга
+                li: a(href="subservice.html", target="blank") Подуслуга
+                li: a(href="projects.html", target="blank") Проекты
+                li: a(href="project.html", target="blank") Проект
+                li: a(href="information.html", target="blank") Информационная страница
+                li: a(href="proposal.html", target="blank") Коммерческое предложение
+                li: a(href="contacts.html", target="blank") Контакты
+                li: a(href="business.html", target="blank") Для бизнеса
+                li: a(href="prices.html", target="blank") Прайс-Лист
+                li: a(href="articles.html", target="blank") Статьи
+                li: a(href="article.html", target="blank") Статья
+                li: a(href="catalog.html", target="blank") Каталог
+                li: a(href="category.html", target="blank") Категория
+                li: a(href="product.html", target="blank") Карточка

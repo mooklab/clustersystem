@@ -1,0 +1,64 @@
+section.advantages
+    background: $light-gradient
+    padding-top: var(--section-gap)
+    padding-bottom: var(--section-gap)
+
+    div.container
+        display: grid
+        grid-gap: var(--big-gap)
+        grid-column: breakout
+        margin-top: var(--big-gap)
+
+    div.list
+        display: grid
+        grid-template-columns: repeat(2, 1fr)
+        grid-gap: 10px
+        counter-reset: advantage
+        +screen(s)
+            grid-template-columns: 1fr
+
+        div.image
+            img
+                mix-blend-mode: multiply
+                width: 100%
+                height: 100%
+                object-fit: contain
+            &:first-child
+                margin-right: -10px
+                margin-bottom: -10px
+                object-position: center right
+                +screen(s)
+                    margin-right: -20px
+
+            &:last-child
+                margin-top: -10px
+                margin-left: -10px
+                object-position: center left
+                +screen(s)
+                    margin-left: -20px
+
+    div.item
+        counter-increment: advantage
+        border-radius: 8px
+        padding: calc(var(--big-gap) * 2) var(--big-gap)
+        background: $dark-gradient
+        color: $footer-gray
+        display: grid
+        grid-gap: var(--medium-gap)
+        +screen(s)
+            padding: calc(var(--medium-gap) * 2) var(--medium-gap)
+        h3
+            color: white
+        b
+            color: $white
+
+        &::before
+            content: counter(advantage)
+            display: grid
+            align-items: center
+            justify-items: center
+            border-radius: 999px
+            width: 50px
+            height: 50px
+            background: $black
+            color: $white

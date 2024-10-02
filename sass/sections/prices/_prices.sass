@@ -1,0 +1,88 @@
+section.prices
+    padding-top: var(--section-gap)
+    padding-bottom: var(--section-gap)
+
+    div.container
+        display: grid
+        grid-gap: var(--gap)
+
+        h1
+            margin-bottom: var(--gap)
+
+        div.tabs
+            display: grid
+            // grid-gap: var(--big-gap)
+
+        div.swiper
+            width: 100%
+            min-width: 0
+
+        table
+            // margin-top: var(--gap)
+            margin-bottom: var(--gap)
+            width: 100%
+
+            th, td
+                padding-top: var(--gap)
+                padding-bottom: var(--gap)
+
+            th
+                font-weight: 400
+                text-align: left
+                border-bottom: 1px solid $footer-gray
+
+            td
+                padding-right: var(--gap)
+                border-bottom: 1px solid $footer-gray
+                white-space: nowrap
+                &:last-child
+                    padding-right: unset
+                    // text-align: right
+
+        // table
+        //     margin-top: var(--gap)
+        //     margin-bottom: var(--gap)
+        //     width: 100%
+
+        //     thead
+        //         +screen(s)
+        //             display: none
+
+        //     tr
+        //         +screen(s)
+        //             display: grid
+        //             border-bottom: 1px solid $footer-gray
+        //             grid-gap: var(--gap)
+        //             padding: var(--gap) 0
+        //             &:first-child
+        //                 border-top: 1px solid $footer-gray
+
+        //     th, td
+        //         padding-top: var(--gap)
+        //         padding-bottom: var(--gap)
+        //         +screen(s)
+        //             padding: unset
+
+        //     th
+        //         font-weight: 400
+        //         text-align: left
+        //         border-bottom: 1px solid $footer-gray
+        //         &:last-child
+        //             text-align: right
+
+        //     td
+        //         padding-right: var(--gap)
+        //         border-bottom: 1px solid $footer-gray
+        //         +screen(s)
+        //             border: unset
+        //             &::before
+        //                 content: attr(data-title)
+        //         &:last-child
+        //             padding-right: unset
+        //             text-align: right
+        //             +screen(s)
+        //                 text-align: left
+
+        ul.list
+            margin-top: var(--gap)
+            margin-bottom: var(--gap)

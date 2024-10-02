@@ -1,0 +1,39 @@
+section.stages
+    padding-bottom: var(--section-gap)
+    background: $light-gradient
+
+    div.container
+        display: grid
+        grid-gap: var(--big-gap)
+        grid-column: breakout
+
+    div.tabs
+        display: grid
+        grid-gap: var(--big-gap)
+
+    div.swiper
+        width: 100%
+        min-width: 0
+
+    div.tabs_contents
+        div.swiper-slide
+            display: grid
+            grid-gap: var(--big-gap)
+            div.text
+                display: grid
+                grid-gap: var(--small-gap)
+                max-width: 640px
+            img
+                width: 100%
+                aspect-ratio: 16 / 9
+                object-fit: cover
+                object-position: center center
+                border-radius: 8px
+
+        div.row
+            display: grid
+            align-items: center
+            grid-template-columns: repeat(2, 1fr)
+            grid-gap: var(--big-gap)
+            +screen(m)
+                grid-template-columns: 1fr

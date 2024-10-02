@@ -1,0 +1,138 @@
+section.main
+    background: $black
+    padding-top: calc(var(--section-gap) + var(--header))
+    padding-bottom: var(--gap)
+    min-height: 100vh
+    z-index: 1
+
+    div.container
+        display: grid
+        grid-template-rows: 1fr max-content
+        grid-gap: var(--section-gap)
+
+    div.preview
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        z-index: 0
+        &::after
+            content: ''
+            display: block
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            background: rgba(13, 16, 18, 0.5)
+            z-index: 1
+
+        img
+            width: 100%
+            height: 100%
+            object-fit: cover
+            object-position: center center
+
+    div.intro
+        position: relative
+        display: grid
+        align-content: center
+        grid-gap: var(--big-gap)
+        height: 100%
+        z-index: 2
+        color: $white
+        div.text
+            display: grid
+            grid-gap: var(--medium-gap)
+        div.title
+            display: grid
+            grid-gap: 10px
+
+    div.advantages
+        position: relative
+        div.list
+            position: relative
+            display: grid
+            justify-content: center
+            grid-auto-flow: column
+            grid-auto-columns: auto
+            grid-gap: var(--gap)
+            border-radius: 8px
+            padding: var(--medium-gap)
+            background: linear-gradient(90deg, #313840 0%, #252a2f 100%)
+            width: 1000px
+            z-index: 2
+            +screen(l)
+                align-items: start
+                grid-auto-columns: 1fr
+                width: 100%
+            +screen(s)
+                grid-auto-flow: row
+                grid-template-columns: 1fr
+                grid-gap: var(--medium-gap)
+        div.item
+            display: grid
+            align-items: center
+            grid-template-columns: max-content 1fr
+            grid-gap: var(--gap)
+            +screen(l)
+                grid-template-columns: 1fr
+                justify-items: center
+                text-align: center
+
+            svg
+                path
+                    stroke: $footer-gray
+
+            &:not(:last-child)
+                border-right: 1px dashed rgba(164, 173, 186, 0.5)
+                padding-right: var(--gap)
+                +screen(s)
+                    border-right: unset
+                    padding-right: unset
+                    padding-bottom: var(--medium-gap)
+                    border-bottom: 1px dashed rgba(164, 173, 186, 0.5)
+
+            div.text
+                display: grid
+                grid-gap: 10px
+                color: $footer-gray
+
+                span
+                    color: $white
+
+        &::after
+            content: ''
+            position: absolute
+            top: 50%
+            left: 50%
+            display: block
+            height: calc(50% + var(--gap))
+            width: 100vw
+            background: white
+            transform: translateX(-50%)
+            +screen(s)
+                top: calc(var(--gap) * -1)
+                height: calc(100% + var(--gap) * 2)
+
+    div.params
+        display: flex
+        flex-wrap: wrap
+        justify-content: space-between
+        gap: var(--medium-gap) var(--gap)
+        +screen(s)
+            flex-direction: column
+
+        div.param
+            display: grid
+            grid-gap: 10px
+
+            small
+                color: $footer-gray
+
+            h2
+                font-size: 40px
+                color: white
+                +screen(m)
+                    font-size: 30px

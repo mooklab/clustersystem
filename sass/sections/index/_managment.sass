@@ -1,0 +1,82 @@
+section.managment
+    padding-top: var(--section-gap)
+    padding-bottom: var(--section-gap)
+    background: $light-gradient
+
+    div.container
+        display: grid
+        grid-gap: calc(var(--big-gap) + 80px)
+        grid-column: breakout
+        +screen(s)
+            grid-gap: var(--big-gap)
+
+    div.item
+        display: grid
+        align-items: center
+        grid-template-columns: 1fr 400px 1fr
+        // grid-gap: var(--section-gap)
+        padding-top: var(--section-gap)
+        padding-bottom: var(--section-gap)
+        +screen(m)
+            grid-template-columns: repeat(2, 1fr)
+            div.empty
+                display: none
+
+        div.text
+            display: grid
+            grid-gap: 20px
+
+            div.apps
+                display: grid
+                grid-auto-flow: column
+                grid-auto-columns: max-content
+                grid-gap: var(--small-gap)
+                margin-top: 10px
+                +screen(s)
+                    grid-auto-flow: row
+
+            div.voices
+                display: grid
+                grid-auto-flow: column
+                grid-auto-columns: max-content
+                grid-gap: var(--small-gap)
+                margin-top: 10px
+
+                div.siri
+                    width: 60px
+                    height: 60px
+                    border-radius: 999px
+                    background-image: url(../images/siri.gif)
+                    background-size: 166px 126px
+                    background-position: center center
+
+        div.image
+            position: relative
+            width: 100%
+            height: 100%
+            z-index: 2
+            mix-blend-mode: multiply
+            img
+                position: absolute
+                top: 50%
+                transform: translateY(-50%)
+                +screen(m)
+                    width: 100%
+                +screen(s)
+                    width: 150%
+                    min-width: 240px
+
+        &:nth-child(2n)
+            div.image
+                img
+                    left: 0
+        &:nth-child(2n-1)
+            div.image
+                img
+                    right: 0
+
+        &:not(:last-child)
+            background-image: linear-gradient(to right, #A4ADBA 0%, #A4ADBA 50%, white 50%, white 100%)
+            background-position: bottom
+            background-size: 8px 1px
+            background-repeat: repeat-x

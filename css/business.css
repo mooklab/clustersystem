@@ -1,0 +1,1028 @@
+section.main {
+  background: #1b1d21;
+  padding-top: calc(var(--section-gap) + var(--header));
+  padding-bottom: var(--gap);
+  min-height: 100vh;
+  z-index: 1;
+}
+section.main div.container {
+  display: grid;
+  grid-template-rows: 1fr -webkit-max-content;
+  grid-template-rows: 1fr max-content;
+  grid-gap: var(--section-gap);
+}
+section.main div.preview {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+section.main div.preview::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(13, 16, 18, 0.5);
+  z-index: 1;
+}
+section.main div.preview img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center center;
+     object-position: center center;
+}
+section.main div.intro {
+  position: relative;
+  display: grid;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  grid-gap: var(--big-gap);
+  height: 100%;
+  z-index: 2;
+  color: #fff;
+}
+section.main div.intro div.text {
+  display: grid;
+  grid-gap: var(--medium-gap);
+}
+section.main div.intro div.title {
+  display: grid;
+  grid-gap: 10px;
+}
+section.main div.advantages {
+  position: relative;
+}
+section.main div.advantages div.list {
+  position: relative;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  grid-auto-flow: column;
+  grid-auto-columns: auto;
+  grid-gap: var(--gap);
+  border-radius: 8px;
+  padding: var(--medium-gap);
+  background: -webkit-gradient(linear, left top, right top, from(#313840), to(#252a2f));
+  background: linear-gradient(90deg, #313840 0%, #252a2f 100%);
+  width: 1000px;
+  z-index: 2;
+}
+@media (max-width: 1280px) {
+  section.main div.advantages div.list {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
+    grid-auto-columns: 1fr;
+    width: 100%;
+  }
+}
+@media (max-width: 640px) {
+  section.main div.advantages div.list {
+    grid-auto-flow: row;
+    grid-template-columns: 1fr;
+    grid-gap: var(--medium-gap);
+  }
+}
+section.main div.advantages div.item {
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  grid-template-columns: -webkit-max-content 1fr;
+  grid-template-columns: max-content 1fr;
+  grid-gap: var(--gap);
+}
+@media (max-width: 1280px) {
+  section.main div.advantages div.item {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+  }
+}
+section.main div.advantages div.item svg path {
+  stroke: #a4adba;
+}
+section.main div.advantages div.item:not(:last-child) {
+  border-right: 1px dashed rgba(164, 173, 186, 0.5);
+  padding-right: var(--gap);
+}
+@media (max-width: 640px) {
+  section.main div.advantages div.item:not(:last-child) {
+    border-right: unset;
+    padding-right: unset;
+    padding-bottom: var(--medium-gap);
+    border-bottom: 1px dashed rgba(164, 173, 186, 0.5);
+  }
+}
+section.main div.advantages div.item div.text {
+  display: grid;
+  grid-gap: 10px;
+  color: #a4adba;
+}
+section.main div.advantages div.item div.text span {
+  color: #fff;
+}
+section.main div.advantages::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  height: calc(50% + var(--gap));
+  width: 100vw;
+  background: white;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+@media (max-width: 640px) {
+  section.main div.advantages::after {
+    top: calc(var(--gap) * -1);
+    height: calc(100% + var(--gap) * 2);
+  }
+}
+section.main div.params {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: var(--medium-gap) var(--gap);
+}
+@media (max-width: 640px) {
+  section.main div.params {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+section.main div.params div.param {
+  display: grid;
+  grid-gap: 10px;
+}
+section.main div.params div.param small {
+  color: #a4adba;
+}
+section.main div.params div.param h2 {
+  font-size: 40px;
+  color: white;
+}
+@media (max-width: 960px) {
+  section.main div.params div.param h2 {
+    font-size: 30px;
+  }
+}
+
+section.advantages {
+  background: -webkit-gradient(linear, left top, right top, from(#fbfbfd), to(#f5f5f7));
+  background: linear-gradient(90deg, #fbfbfd 0%, #f5f5f7 100%);
+  padding-top: var(--section-gap);
+  padding-bottom: var(--section-gap);
+}
+section.advantages div.container {
+  display: grid;
+  grid-gap: var(--big-gap);
+  grid-column: breakout;
+  margin-top: var(--big-gap);
+}
+section.advantages div.list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+  counter-reset: advantage;
+}
+@media (max-width: 640px) {
+  section.advantages div.list {
+    grid-template-columns: 1fr;
+  }
+}
+section.advantages div.list div.image img {
+  mix-blend-mode: multiply;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+section.advantages div.list div.image:first-child {
+  margin-right: -10px;
+  margin-bottom: -10px;
+  -o-object-position: center right;
+     object-position: center right;
+}
+@media (max-width: 640px) {
+  section.advantages div.list div.image:first-child {
+    margin-right: -20px;
+  }
+}
+section.advantages div.list div.image:last-child {
+  margin-top: -10px;
+  margin-left: -10px;
+  -o-object-position: center left;
+     object-position: center left;
+}
+@media (max-width: 640px) {
+  section.advantages div.list div.image:last-child {
+    margin-left: -20px;
+  }
+}
+section.advantages div.item {
+  counter-increment: advantage;
+  border-radius: 8px;
+  padding: calc(var(--big-gap) * 2) var(--big-gap);
+  background: -webkit-gradient(linear, left top, right top, from(#313840), to(#252a2f));
+  background: linear-gradient(90deg, #313840 0%, #252a2f 100%);
+  color: #a4adba;
+  display: grid;
+  grid-gap: var(--medium-gap);
+}
+@media (max-width: 640px) {
+  section.advantages div.item {
+    padding: calc(var(--medium-gap) * 2) var(--medium-gap);
+  }
+}
+section.advantages div.item h3 {
+  color: white;
+}
+section.advantages div.item b {
+  color: #fff;
+}
+section.advantages div.item::before {
+  content: counter(advantage);
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+  border-radius: 999px;
+  width: 50px;
+  height: 50px;
+  background: #1b1d21;
+  color: #fff;
+}
+
+section.integration {
+  padding-top: var(--section-gap);
+  padding-bottom: var(--section-gap);
+}
+section.integration div.container {
+  display: grid;
+  grid-gap: var(--big-gap);
+  grid-column: breakout;
+}
+section.integration div.tabs {
+  display: grid;
+  grid-gap: var(--big-gap);
+}
+section.integration div.swiper {
+  width: 100%;
+  min-width: 0;
+}
+section.integration div.tabs_contents div.swiper-slide {
+  display: grid;
+  grid-gap: var(--big-gap);
+  grid-template-columns: repeat(2, 1fr);
+}
+@media (max-width: 960px) {
+  section.integration div.tabs_contents div.swiper-slide {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 640px) {
+  section.integration div.tabs_contents div.swiper-slide {
+    grid-template-columns: 1fr;
+  }
+}
+section.integration div.tabs_contents div.swiper-slide div.text {
+  display: grid;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  grid-gap: var(--gap);
+  max-width: 640px;
+}
+section.integration div.tabs_contents div.swiper-slide img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center center;
+     object-position: center center;
+  border-radius: 8px;
+}
+
+section.support {
+  padding-top: var(--section-gap);
+  padding-bottom: var(--section-gap);
+}
+section.support div.container {
+  display: grid;
+  grid-gap: var(--big-gap);
+  grid-column: breakout;
+}
+section.support div.tabs {
+  display: grid;
+  grid-gap: var(--big-gap);
+}
+section.support div.swiper {
+  width: 100%;
+  min-width: 0;
+}
+section.support div.tabs_contents div.swiper-slide {
+  display: grid;
+  grid-gap: var(--big-gap);
+  grid-template-columns: repeat(2, 1fr);
+}
+@media (max-width: 960px) {
+  section.support div.tabs_contents div.swiper-slide {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 640px) {
+  section.support div.tabs_contents div.swiper-slide {
+    grid-template-columns: 1fr;
+  }
+}
+section.support div.tabs_contents div.swiper-slide div.text {
+  display: grid;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  grid-gap: var(--gap);
+  max-width: 640px;
+}
+section.support div.tabs_contents div.swiper-slide img {
+  width: 100%;
+  aspect-ratio: 4/3;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center center;
+     object-position: center center;
+  border-radius: 8px;
+}
+
+section.projects {
+  padding-top: var(--section-gap);
+  padding-bottom: var(--section-gap);
+  background: #1b1d21;
+  color: #fff;
+}
+section.projects h2 {
+  grid-column: breakout;
+  margin-bottom: var(--big-gap);
+}
+section.projects div.swiper {
+  width: 100%;
+  min-width: 0;
+  overflow: visible;
+}
+section.projects div.swiper div.swiper-slide {
+  -ms-flex-line-pack: center;
+      align-content: center;
+  padding-bottom: var(--big-gap);
+  height: 100%;
+}
+section.projects div.swiper div.swiper-slide.swiper-slide-active a.project {
+  opacity: 1;
+}
+section.projects div.swiper div.swiper-slide.swiper-slide-active a.project div.preview {
+  -webkit-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+  aspect-ratio: 20/10;
+  -webkit-filter: grayscale(0);
+          filter: grayscale(0);
+}
+@media (max-width: 640px) {
+  section.projects div.swiper div.swiper-slide.swiper-slide-active a.project div.preview {
+    aspect-ratio: 1/1;
+  }
+}
+section.projects div.swiper div.swiper-slide a.project {
+  opacity: 0.5;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+}
+section.projects div.swiper div.swiper-slide a.project div.preview {
+  -webkit-transition-property: all;
+  transition-property: all;
+  -webkit-transition-duration: 0.5s;
+          transition-duration: 0.5s;
+  -webkit-transition-delay: 0.5s;
+          transition-delay: 0.5s;
+  aspect-ratio: 25/10;
+  -webkit-filter: grayscale(1);
+          filter: grayscale(1);
+}
+@media (max-width: 640px) {
+  section.projects div.swiper div.swiper-slide a.project div.preview {
+    aspect-ratio: 1/1;
+  }
+}
+
+section.showroom {
+  padding-top: var(--section-gap);
+  padding-bottom: var(--section-gap);
+  background: -webkit-gradient(linear, left top, right top, from(#313840), to(#252a2f));
+  background: linear-gradient(90deg, #313840 0%, #252a2f 100%);
+  color: #fff;
+}
+section.showroom div.text {
+  display: grid;
+  grid-gap: var(--medium-gap);
+  grid-column: breakout;
+  color: #a4adba;
+  max-width: 960px;
+}
+section.showroom div.text h2, section.showroom div.text h3 {
+  color: #fff;
+}
+section.showroom div.text h3 {
+  color: #a4adba;
+}
+section.showroom div.text span {
+  color: #fff;
+}
+section.showroom div.video {
+  position: relative;
+  grid-column: breakout;
+  aspect-ratio: 2.5/1;
+  border-radius: 12px;
+  -webkit-box-shadow: 0 20px 50px 0 rgba(20, 20, 26, 0.5);
+          box-shadow: 0 20px 50px 0 rgba(20, 20, 26, 0.5);
+  overflow: hidden;
+  margin: var(--big-gap) 0;
+}
+@media (max-width: 960px) {
+  section.showroom div.video {
+    aspect-ratio: 16/9;
+  }
+}
+@media (max-width: 640px) {
+  section.showroom div.video {
+    aspect-ratio: 3/2;
+  }
+}
+section.showroom div.video img.preview {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center center;
+     object-position: center center;
+}
+section.showroom div.video div.play {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-animation-name: showroom_play;
+          animation-name: showroom_play;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+@media (max-width: 640px) {
+  section.showroom div.video div.play {
+    width: 60px;
+    height: 60px;
+  }
+}
+section.showroom div.video div.play svg {
+  width: 100%;
+  height: 100%;
+}
+section.showroom div.video div.play svg path {
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+section.showroom div.video div.play:hover svg path {
+  fill: white;
+}
+section.showroom div.pins {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: var(--gap);
+}
+@media (max-width: 640px) {
+  section.showroom div.pins {
+    grid-template-columns: 1fr;
+  }
+}
+section.showroom div.pins a.pin {
+  cursor: pointer;
+  display: grid;
+  grid-gap: var(--small-gap);
+  justify-items: center;
+  text-align: center;
+  border-radius: 8px;
+  padding: var(--medium-gap) var(--gap);
+  background: rgba(255, 255, 255, 0.05);
+  -webkit-box-shadow: 0 20px 50px 0 rgba(20, 20, 26, 0);
+          box-shadow: 0 20px 50px 0 rgba(20, 20, 26, 0);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+section.showroom div.pins a.pin div.link {
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  grid-template-columns: auto -webkit-max-content;
+  grid-template-columns: auto max-content;
+  grid-gap: 10px;
+  color: #a4adba;
+}
+section.showroom div.pins a.pin div.link:hover {
+  color: white;
+}
+section.showroom div.pins a.pin div.link:hover svg path {
+  stroke: #fff;
+}
+section.showroom div.pins a.pin div.link svg path {
+  stroke: #a4adba;
+}
+section.showroom div.pins a.pin:hover {
+  -webkit-box-shadow: 0 20px 50px 0 rgba(20, 20, 26, 0.3);
+          box-shadow: 0 20px 50px 0 rgba(20, 20, 26, 0.3);
+}
+section.showroom div.pins a.pin:hover img {
+  -webkit-transform-origin: bottom center;
+      -ms-transform-origin: bottom center;
+          transform-origin: bottom center;
+  -webkit-animation-name: showroom_icon;
+          animation-name: showroom_icon;
+  -webkit-animation-duration: 1s;
+          animation-duration: 1s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  animation-timeline: ease;
+}
+
+@-webkit-keyframes showroom_icon {
+  0% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+  50% {
+    -webkit-transform: translateY(-15%);
+            transform: translateY(-15%);
+  }
+  100% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+}
+
+@keyframes showroom_icon {
+  0% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+  50% {
+    -webkit-transform: translateY(-15%);
+            transform: translateY(-15%);
+  }
+  100% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+}
+@-webkit-keyframes showroom_play {
+  0% {
+    -webkit-transform: translate(-50%, -50%) scale(1);
+            transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    -webkit-transform: translate(-50%, -50%) scale(1.15);
+            transform: translate(-50%, -50%) scale(1.15);
+  }
+  100% {
+    -webkit-transform: translate(-50%, -50%) scale(1);
+            transform: translate(-50%, -50%) scale(1);
+  }
+}
+@keyframes showroom_play {
+  0% {
+    -webkit-transform: translate(-50%, -50%) scale(1);
+            transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    -webkit-transform: translate(-50%, -50%) scale(1.15);
+            transform: translate(-50%, -50%) scale(1.15);
+  }
+  100% {
+    -webkit-transform: translate(-50%, -50%) scale(1);
+            transform: translate(-50%, -50%) scale(1);
+  }
+}
+section.faq {
+  background: -webkit-gradient(linear, left top, right top, from(#fbfbfd), to(#f5f5f7));
+  background: linear-gradient(90deg, #fbfbfd 0%, #f5f5f7 100%);
+}
+section.faq div.container {
+  display: grid;
+  grid-gap: var(--big-gap);
+  margin-top: var(--section-gap);
+  margin-bottom: var(--section-gap);
+}
+section.faq div.accordion {
+  border-bottom: 1px solid #a4adba;
+  padding: var(--medium-gap) 0px;
+}
+section.faq div.accordion:first-child {
+  border-top: 1px solid #a4adba;
+}
+section.faq div.accordion div.accordion_caption {
+  cursor: pointer;
+  display: grid;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  grid-template-columns: 1fr -webkit-max-content;
+  grid-template-columns: 1fr max-content;
+  grid-gap: var(--gap);
+}
+section.faq div.accordion div.accordion_caption div.icon {
+  height: 0;
+}
+section.faq div.accordion div.accordion_caption div.icon svg {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+section.faq div.accordion div.accordion_text {
+  margin-top: var(--small-gap);
+}
+section.faq div.accordion.open div.accordion_caption div.icon svg {
+  -webkit-transform: rotate(225deg);
+      -ms-transform: rotate(225deg);
+          transform: rotate(225deg);
+}
+
+section.callback {
+  padding-top: var(--section-gap);
+  padding-bottom: var(--section-gap);
+}
+section.callback div.container {
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: var(--big-gap);
+  grid-column: breakout;
+}
+@media (max-width: 640px) {
+  section.callback div.container {
+    grid-template-columns: 1fr;
+  }
+}
+section.callback div.form {
+  display: grid;
+  grid-gap: var(--big-gap);
+}
+section.callback div.form div.text {
+  display: grid;
+  grid-gap: var(--medium-gap);
+}
+section.callback div.form div.inputs {
+  display: grid;
+  grid-gap: var(--gap);
+}
+section.callback div.form div.row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: var(--gap);
+}
+@media (max-width: 1280px) {
+  section.callback div.form div.row {
+    grid-template-columns: 1fr;
+  }
+}
+section.callback div.form form {
+  display: grid;
+  grid-gap: var(--big-gap);
+}
+section.callback div.form small a {
+  font-size: inherit;
+  font-weight: inherit;
+  color: #242629;
+  text-decoration: underline;
+}
+section.callback div.form small a:hover {
+  text-decoration: none;
+}
+section.callback div.image {
+  position: relative;
+  display: grid;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
+  height: 100%;
+  width: 100%;
+}
+section.callback div.image div.wrap {
+  position: relative;
+}
+section.callback div.image img.phone {
+  position: relative;
+  bottom: calc(var(--section-gap) * -1);
+  left: 0;
+  width: 100%;
+  aspect-ratio: 1462/1876;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: left bottom;
+     object-position: left bottom;
+}
+@media (max-width: 1280px) {
+  section.callback div.image img.phone {
+    height: 100%;
+    height: 720px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+}
+@media (max-width: 640px) {
+  section.callback div.image img.phone {
+    height: calc(100% + var(--section-gap));
+    left: 10%;
+    -o-object-fit: contain;
+       object-fit: contain;
+    -o-object-position: center bottom;
+       object-position: center bottom;
+  }
+}
+section.callback div.image svg {
+  position: absolute;
+  width: 15%;
+  top: 50%;
+  left: 37.5%;
+  -webkit-transform: translate(-50%, -20%) rotate(-1deg);
+      -ms-transform: translate(-50%, -20%) rotate(-1deg);
+          transform: translate(-50%, -20%) rotate(-1deg);
+}
+@media (max-width: 1280px) {
+  section.callback div.image svg {
+    top: 50%;
+    left: 210px;
+    width: 80px;
+  }
+}
+@media (max-width: 640px) {
+  section.callback div.image svg {
+    top: 60vw;
+    left: 47.5%;
+    width: 15%;
+    -webkit-transform: translate(-50%, -50%) rotate(-1deg);
+        -ms-transform: translate(-50%, -50%) rotate(-1deg);
+            transform: translate(-50%, -50%) rotate(-1deg);
+  }
+}
+section.callback div.image.animate svg path {
+  fill: rgba(36, 38, 41, 0);
+  -webkit-animation: logotype 100ms forwards ease-out;
+          animation: logotype 100ms forwards ease-out;
+}
+section.callback div.image.animate svg path:nth-child(1) {
+  -webkit-animation-delay: 50ms;
+          animation-delay: 50ms;
+}
+section.callback div.image.animate svg path:nth-child(2) {
+  -webkit-animation-delay: 100ms;
+          animation-delay: 100ms;
+}
+section.callback div.image.animate svg path:nth-child(3) {
+  -webkit-animation-delay: 150ms;
+          animation-delay: 150ms;
+}
+section.callback div.image.animate svg path:nth-child(4) {
+  -webkit-animation-delay: 200ms;
+          animation-delay: 200ms;
+}
+section.callback div.image.animate svg path:nth-child(5) {
+  -webkit-animation-delay: 250ms;
+          animation-delay: 250ms;
+}
+section.callback div.image.animate svg path:nth-child(6) {
+  -webkit-animation-delay: 300ms;
+          animation-delay: 300ms;
+}
+section.callback div.image.animate svg path:nth-child(7) {
+  -webkit-animation-delay: 350ms;
+          animation-delay: 350ms;
+}
+section.callback div.image.animate svg path:nth-child(8) {
+  -webkit-animation-delay: 400ms;
+          animation-delay: 400ms;
+}
+section.callback div.image.animate svg path:nth-child(9) {
+  -webkit-animation-delay: 450ms;
+          animation-delay: 450ms;
+}
+section.callback div.image.animate svg path:nth-child(10) {
+  -webkit-animation-delay: 500ms;
+          animation-delay: 500ms;
+}
+section.callback div.image.animate svg path:nth-child(11) {
+  -webkit-animation-delay: 550ms;
+          animation-delay: 550ms;
+}
+section.callback div.image.animate svg path:nth-child(12) {
+  -webkit-animation-delay: 600ms;
+          animation-delay: 600ms;
+}
+section.callback div.image.animate svg path:nth-child(13) {
+  -webkit-animation-delay: 650ms;
+          animation-delay: 650ms;
+}
+section.callback div.image.animate svg path:nth-child(14) {
+  -webkit-animation-delay: 700ms;
+          animation-delay: 700ms;
+}
+section.callback div.image.animate svg path:nth-child(15) {
+  -webkit-animation-delay: 750ms;
+          animation-delay: 750ms;
+}
+section.callback div.image.animate svg path:nth-child(16) {
+  -webkit-animation-delay: 800ms;
+          animation-delay: 800ms;
+}
+section.callback div.image.animate svg path:nth-child(17) {
+  -webkit-animation-delay: 850ms;
+          animation-delay: 850ms;
+}
+section.callback div.image.animate svg path:nth-child(18) {
+  -webkit-animation-delay: 900ms;
+          animation-delay: 900ms;
+}
+section.callback div.image.animate svg path:nth-child(19) {
+  -webkit-animation-delay: 950ms;
+          animation-delay: 950ms;
+}
+section.callback div.image.animate svg path:nth-child(20) {
+  -webkit-animation-delay: 1000ms;
+          animation-delay: 1000ms;
+}
+section.callback div.image.animate svg path:nth-child(21) {
+  -webkit-animation-delay: 1050ms;
+          animation-delay: 1050ms;
+}
+section.callback div.image.animate svg path:nth-child(22) {
+  -webkit-animation-delay: 1100ms;
+          animation-delay: 1100ms;
+}
+section.callback div.image.animate svg path:nth-child(23) {
+  -webkit-animation-delay: 1150ms;
+          animation-delay: 1150ms;
+}
+section.callback div.image.animate svg path:nth-child(24) {
+  -webkit-animation-delay: 1200ms;
+          animation-delay: 1200ms;
+}
+section.callback div.image.animate svg path:nth-child(25) {
+  -webkit-animation-delay: 1250ms;
+          animation-delay: 1250ms;
+}
+section.callback div.image.animate svg path:nth-child(26) {
+  -webkit-animation-delay: 1300ms;
+          animation-delay: 1300ms;
+}
+section.callback div.image.animate svg path:nth-child(27) {
+  -webkit-animation-delay: 1350ms;
+          animation-delay: 1350ms;
+}
+section.callback div.image.animate svg path:nth-child(28) {
+  -webkit-animation-delay: 1400ms;
+          animation-delay: 1400ms;
+}
+section.callback div.image.animate svg path:nth-child(29) {
+  -webkit-animation-delay: 1450ms;
+          animation-delay: 1450ms;
+}
+section.callback div.image.animate svg path:nth-child(30) {
+  -webkit-animation-delay: 1500ms;
+          animation-delay: 1500ms;
+}
+section.callback div.image.animate svg path:nth-child(31) {
+  -webkit-animation-delay: 1550ms;
+          animation-delay: 1550ms;
+}
+section.callback div.image.animate svg path:nth-child(32) {
+  -webkit-animation-delay: 1600ms;
+          animation-delay: 1600ms;
+}
+section.callback div.image.animate svg path:nth-child(33) {
+  -webkit-animation-delay: 1650ms;
+          animation-delay: 1650ms;
+}
+section.callback div.image.animate svg path:nth-child(34) {
+  -webkit-animation-delay: 1700ms;
+          animation-delay: 1700ms;
+}
+section.callback div.image.animate svg path:nth-child(35) {
+  -webkit-animation-delay: 1750ms;
+          animation-delay: 1750ms;
+}
+section.callback div.image.animate svg path:nth-child(36) {
+  -webkit-animation-delay: 1800ms;
+          animation-delay: 1800ms;
+}
+section.callback div.image.animate svg path:nth-child(37) {
+  -webkit-animation-delay: 1850ms;
+          animation-delay: 1850ms;
+}
+section.callback div.image.animate svg path:nth-child(38) {
+  -webkit-animation-delay: 1900ms;
+          animation-delay: 1900ms;
+}
+section.callback div.image.animate svg path:nth-child(39) {
+  -webkit-animation-delay: 1950ms;
+          animation-delay: 1950ms;
+}
+section.callback div.image.animate svg path:nth-child(40) {
+  -webkit-animation-delay: 2000ms;
+          animation-delay: 2000ms;
+}
+section.callback div.image.animate svg path:nth-child(41) {
+  -webkit-animation-delay: 2050ms;
+          animation-delay: 2050ms;
+}
+section.callback div.image.animate svg path:nth-child(42) {
+  -webkit-animation-delay: 2100ms;
+          animation-delay: 2100ms;
+}
+section.callback div.image.animate svg path:nth-child(43) {
+  -webkit-animation-delay: 2150ms;
+          animation-delay: 2150ms;
+}
+section.callback div.image.animate svg path:nth-child(44) {
+  -webkit-animation-delay: 2200ms;
+          animation-delay: 2200ms;
+}
+section.callback div.image.animate svg path:nth-child(45) {
+  -webkit-animation-delay: 2250ms;
+          animation-delay: 2250ms;
+}
+section.callback div.image.animate svg path:nth-child(46) {
+  -webkit-animation-delay: 2300ms;
+          animation-delay: 2300ms;
+}
+section.callback div.image.animate svg path:nth-child(47) {
+  -webkit-animation-delay: 2350ms;
+          animation-delay: 2350ms;
+}
+section.callback div.image.animate svg path:nth-child(48) {
+  -webkit-animation-delay: 2400ms;
+          animation-delay: 2400ms;
+}
+section.callback div.image.animate svg path:nth-child(49) {
+  -webkit-animation-delay: 2450ms;
+          animation-delay: 2450ms;
+}
+section.callback div.image.animate svg path:nth-child(50) {
+  -webkit-animation-delay: 2500ms;
+          animation-delay: 2500ms;
+}
+
+@-webkit-keyframes logotype {
+  0% {
+    fill: rgba(36, 38, 41, 0);
+  }
+  100% {
+    fill: rgb(36, 38, 41);
+  }
+}
+
+@keyframes logotype {
+  0% {
+    fill: rgba(36, 38, 41, 0);
+  }
+  100% {
+    fill: rgb(36, 38, 41);
+  }
+}
+section.main div.advantages::after {
+  background: -webkit-gradient(linear, left top, right top, from(#fbfbfd), to(#f5f5f7));
+  background: linear-gradient(90deg, #fbfbfd 0%, #f5f5f7 100%);
+}/*# sourceMappingURL=business.css.map */

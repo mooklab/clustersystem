@@ -1,0 +1,19 @@
+extends common/_layout.pug
+
+block links
+    link(rel="stylesheet", href="css/proposal.css")
+
+block content
+    include sections/proposal/_manager.pug
+    include sections/proposal/_main.pug
+    include sections/proposal/_features.pug
+    include sections/proposal/_calculate.pug
+    include sections/_showroom.pug
+
+    script.
+        header = document.querySelector('header')
+        header.classList.add('transparent')
+
+        window.addEventListener('scroll', event => {
+            this.scrollY > 10 ? header.classList.remove("transparent") : header.classList.add("transparent")
+        })

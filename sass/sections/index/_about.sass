@@ -1,0 +1,45 @@
+section.about
+    padding-top: var(--section-gap)
+    padding-bottom: var(--section-gap)
+    background: $light-gradient
+
+    div.container
+        display: grid
+        grid-gap: var(--medium-gap)
+        grid-column: breakout
+
+    div.text
+        display: grid
+        grid-gap: var(--gap)
+        max-width: 960px
+
+    div.swiper
+        width: 100%
+        min-width: 0
+        border-radius: 8px
+
+    div.swiper-slide
+        display: grid
+        align-content: start
+        grid-gap: var(--small-gap)
+        border-radius: 8px
+        padding: var(--big-gap)
+        background: $dark-gradient
+        color: $footer-gray
+        aspect-ratio: 1 / 1
+        overflow: hidden
+        +screen(l)
+            aspect-ratio: 3 / 4
+
+        img
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            object-fit: cover
+            object-position: center center
+            z-index: -1
+
+        h3, b
+            color: $white

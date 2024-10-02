@@ -1,0 +1,16 @@
+section.projects
+    padding-top: var(--section-gap)
+    padding-bottom: var(--section-gap)
+    background: $dark-gray
+
+    div.container
+        display: grid
+        grid-gap: var(--big-gap)
+        grid-column: breakout
+
+    div.list
+        display: grid
+        grid-template-columns: repeat(2, 1fr)
+        grid-gap: var(--big-gap) var(--gap)
+        +screen(s)
+            grid-template-columns: 1fr

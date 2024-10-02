@@ -1,0 +1,23 @@
+extends common/_layout.pug
+include sections/_callback.pug
+
+block links
+    link(rel="stylesheet", href="css/business.css")
+
+block content
+    include sections/business/_main.pug
+    include sections/business/_advantages.pug
+    include sections/business/_integration.pug
+    include sections/business/_support.pug
+    include sections/_projects.pug
+    include sections/_showroom.pug
+    include sections/_faq.pug
+    +callback('<span>Не начали</span> сотрудничать с нами?')
+
+    script.
+        header = document.querySelector('header')
+        header.classList.add('transparent')
+
+        window.addEventListener('scroll', event => {
+            this.scrollY > 10 ? header.classList.remove("transparent") : header.classList.add("transparent")
+        })

@@ -1,0 +1,21 @@
+// Общее 
+@import common/_variables
+@import common/_mixins
+
+//Секции
+@import sections/_main
+@import sections/proposal/_features
+@import sections/proposal/_calculate
+@import sections/proposal/_manager
+@import sections/_showroom
+
+// Дополнение стилей
+section.main
+    min-height: unset
+    div.container
+        grid-column: breakout
+        h1
+            max-width: unset
+    div.advantages
+        &::after
+            background: $light-gradient

@@ -1,0 +1,156 @@
+dialog[data-modal-name=menu]
+    display: grid
+    align-items: center
+    justify-items: center
+    color: $dark-gray
+    +screen(l)
+        display: block
+
+    div.container
+        display: grid
+        align-content: start
+        grid-template-columns: max-content 1fr 1fr
+        grid-template-areas: 'Logotype Services Information' 'Support Services Information' 'Apps Services Information' 'Socials Services Information' 'Buttons Services Information'
+        grid-template-rows: max-content max-content max-content 1fr
+        grid-gap: var(--big-gap) 0
+        grid-column: breakout
+        +screen(l)
+            grid-template-columns: repeat(2, 1fr)
+            grid-gap: var(--medium-gap)
+            grid-template-areas: 'Logotype Logotype' 'Services Information' 'Apps Socials' 'Buttons Support'
+        +screen(s)
+            grid-template-columns: 1fr
+            grid-template-areas: 'Logotype' 'Services' 'Information' 'Apps' 'Socials' 'Support' 'Buttons'
+
+    div.socials
+        grid-area: Socials
+        display: grid
+        grid-auto-flow: column
+        grid-auto-columns: max-content
+        grid-gap: var(--small-gap)
+        align-self: end
+        a
+            line-height: 0
+        svg:not(:hover)
+            path
+                fill: $dark-gray
+
+    div.logo
+        grid-area: Logotype
+        display: grid
+        grid-gap: var(--gap)
+        a
+            line-height: 0
+        img
+            +screen(s)
+                width: 140px
+
+    div.apps
+        grid-area: Apps
+        display: grid
+        grid-auto-flow: column
+        grid-auto-columns: max-content
+        grid-gap: 20px
+
+    div.information
+        grid-area: Information
+        margin-left: 80px
+        +screen(1600px)
+            margin-left: var(--big-gap)
+        +screen(l)
+            margin-left: unset
+
+    div.services
+        grid-area: Services
+        margin-left: 180px
+        +screen(1600px)
+            margin-left: calc(var(--big-gap) * 2)
+        +screen(l)
+            margin-left: unset
+
+    div.menu
+        display: grid
+        grid-template-rows: max-content 1fr
+        align-items: start
+        grid-gap: var(--gap)
+        width: max-content
+        +screen(s)
+            grid-gap: var(--small-gap)
+        div
+            display: grid
+            grid-gap: 5px
+        strong
+            font-size: 24px
+            color: $gray
+            +screen(s)
+                font-size: 18px
+        a
+            font-size: 36px
+            color: $dark-gray
+            &:hover
+                color: $footer-gray
+            +screen(1600px)
+                font-size: 30px
+            +screen(l)
+                font-size: 24px
+            +screen(s)
+                font-size: 18px
+
+    div.support
+        grid-area: Support
+        display: grid
+        align-content: start
+        grid-gap: var(--small-gap)
+        width: 100%
+        +screen(s)
+            grid-gap: 12px
+
+        strong
+            font-size: 18px
+
+        div.contacts
+            display: grid
+            grid-gap: 10px
+        a
+            display: grid
+            align-items: center
+            grid-template-columns: max-content 1fr
+            grid-gap: 15px
+            font-weight: 500
+            font-size: 16px
+            color: $dark-gray
+            +screen(m)
+                // font-size: 12px
+
+    div.buttons
+        grid-area: Buttons
+        display: grid
+        align-content: start
+        grid-gap: 10px
+        width: 260px
+        +screen(s)
+            width: 100%
+        button
+            cursor: pointer
+            display: grid
+            align-items: center
+            grid-template-columns: 1fr max-content
+            grid-gap: 15px
+            background: transparent
+            border: 1px solid $gray
+            border-radius: 4px
+            padding: 15px
+            width: 100%
+            transition: all .3s
+            &:hover
+                background: $footer-gray
+                border: 1px solid transparent
+
+            span
+                font-size: 14px
+                color: $dark-gray
+                text-align: left
+
+            svg
+                path
+                    stroke: $dark-gray

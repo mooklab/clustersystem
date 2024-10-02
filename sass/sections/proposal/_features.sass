@@ -1,0 +1,69 @@
+section.features
+    padding-top: var(--section-gap)
+    padding-bottom: var(--section-gap)
+    background: $light-gradient
+
+    div.container
+        display: grid
+        grid-gap: var(--big-gap)
+        grid-column: breakout
+
+    div.tabs
+        display: grid
+        grid-gap: var(--big-gap)
+
+    div.swiper
+        width: 100%
+        min-width: 0
+
+    // div.swiper-wrapper
+    //     height: max-content !important
+
+    div.tabs_contents
+        div.swiper-slide
+            display: grid
+            align-items: center
+            grid-template-columns: 480px 1fr
+            grid-gap: var(--gap)
+            +screen(l)
+                grid-template-columns: 1fr 2fr
+            +screen(m)
+                grid-template-columns: 1fr
+
+            img
+                width: 100%
+                object-fit: contain
+                object-position: center center
+                +screen(m)
+                    max-height: 340px
+
+    div.accordion
+        padding: var(--gap) 0
+        border-bottom: 1px solid $footer-gray
+
+        &.open
+            div.icon
+                transform: rotate(135deg)
+
+    div.accordion_caption
+        cursor: pointer
+        display: grid
+        align-items: center
+        grid-template-columns: 1fr max-content max-content
+        grid-gap: var(--gap)
+
+        div.icon
+            line-height: 0
+            transition: all .3s
+
+        span.count
+            display: grid
+            align-items: center
+            width: 120px
+            padding-left: var(--gap)
+            border-left: 1px solid $footer-gray
+            +screen(s)
+                width: 100px
+
+    div.accordion_text
+        margin-top: var(--small-gap)

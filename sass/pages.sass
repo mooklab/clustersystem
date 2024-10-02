@@ -1,0 +1,13 @@
+// Общее 
+@import common/_variables
+@import common/_mixins
+
+//Секции
+section.pages
+    padding-top: var(--section-gap)
+    padding-bottom: var(--section-gap)
+
+    ul.list
+        grid-template-columns: repeat(2, 1fr)
+        +screen(m)
+            grid-template-columns: 1fr

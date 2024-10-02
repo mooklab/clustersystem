@@ -1,0 +1,158 @@
+section.subservices
+    padding-top: var(--section-gap)
+    padding-bottom: var(--section-gap)
+    background: $light-gradient
+
+    div.container
+        display: grid
+        grid-gap: var(--big-gap)
+        grid-column: breakout
+
+    div.text
+        display: grid
+        grid-gap: var(--gap)
+        max-width: 960px
+
+    div.grid
+        display: grid
+        grid-template-columns: repeat(3, 1fr)
+        grid-gap: 10px
+        +screen(m)
+            grid-template-columns: repeat(2, 1fr)
+        +screen(s)
+            grid-template-columns: 1fr
+
+        a.item
+            position: relative
+            aspect-ratio: 1 / 1
+            background: $light-gradient
+            border-radius: 8px
+            overflow: hidden
+            transition: all .3s
+
+            &:hover
+                box-shadow: 10px 10px 30px 0 rgba(32, 64, 94, 0.15)
+                img
+                    transform: scale(1.05)
+                h3
+                    opacity: 0
+                div.note
+                    opacity: 1
+                div.more
+                    small
+                        max-width: 200px
+                        padding: 0 20px
+                &::after
+                    opacity: 0.7
+
+            img
+                position: absolute
+                top: 0
+                left: 0
+                width: 100%
+                height: 100%
+                object-fit: cover
+                object-position: center center
+                transition: all .3s
+
+            h3
+                position: relative
+                font-weight: 700
+                font-size: 36px
+                text-transform: uppercase
+                background-clip: text !important
+                -webkit-background-clip: text !important
+                -webkit-text-fill-color: transparent !important
+                padding: var(--gap)
+                z-index: 1
+                opacity: 1
+                transition: all .3s
+                +screen(m)
+                    font-size: 24px
+
+            h4
+                position: relative
+                font-weight: 700
+                font-size: 24px
+                text-transform: uppercase
+                color: white
+                max-width: 480px
+                +screen(m)
+                    font-size: 24px
+
+            div.note
+                display: grid
+                grid-gap: var(--small-gap)
+                position: absolute
+                top: 0
+                left: 0
+                padding: var(--gap)
+                z-index: 1
+                max-width: 640px
+                opacity: 0
+                transition: all .3s
+                color: $footer-gray
+                max-height: 100%
+                span
+                    display: -webkit-box
+                    -webkit-box-orient: vertical
+                    -webkit-line-clamp: 7
+                    overflow: hidden
+                    +screen(l)
+                        -webkit-line-clamp: 5
+                b
+                    color: white
+
+            div.more
+                position: absolute
+                bottom: var(--gap)
+                right: var(--gap)
+                z-index: 2
+
+            &::after
+                content: ''
+                display: block
+                width: 100%
+                height: 100%
+                position: absolute
+                top: 0
+                left: 0
+                background: black
+                opacity: 0
+                transition: all .2s
+
+            &:nth-child(4n),
+            &:nth-child(4n-3)
+                // aspect-ratio: 2 / 1
+                width: 100%
+                height: 100%
+                aspect-ratio: unset
+                grid-column: 2 span
+                div.note
+                    span
+                        display: -webkit-box
+                        -webkit-box-orient: vertical
+                        -webkit-line-clamp: 6
+                        overflow: hidden
+                +screen(m)
+                    aspect-ratio: 2 / 1
+                +screen(s)
+                    grid-column: 1 span
+                    aspect-ratio: 1 / 1
+                h3
+                    font-size: 48px
+                    +screen(m)
+                        font-size: 36px
+                    +screen(s)
+                        font-size: 24px
+
+            &.gradient
+                &::before
+                    content: ''
+                    position: absolute
+                    top: 0
+                    left: 0
+                    width: 100%
+                    height: 75%
+                    background: linear-gradient(180deg, #0d0f12 0%, rgba(20, 22, 34, 0) 100%)
+                    z-index: 1

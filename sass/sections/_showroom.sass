@@ -1,0 +1,120 @@
+section.showroom
+    padding-top: var(--section-gap)
+    padding-bottom: var(--section-gap)
+    background: $dark-gradient
+    color: $white
+
+    div.text
+        display: grid
+        grid-gap: var(--medium-gap)
+        grid-column: breakout
+        color: $footer-gray
+        max-width: 960px
+        h2, h3
+            color: $white
+        h3
+            color: $footer-gray
+        span
+            color: $white
+
+    div.video
+        position: relative
+        grid-column: breakout
+        aspect-ratio: 2.5 / 1
+        border-radius: 12px
+        box-shadow: 0 20px 50px 0 rgba(20, 20, 26, 0.5)
+        overflow: hidden
+        margin: var(--big-gap) 0
+        +screen(m)
+            aspect-ratio: 16 / 9
+        +screen(s)
+            aspect-ratio: 3 / 2
+        img.preview
+            width: 100%
+            height: 100%
+            object-fit: cover
+            object-position: center center
+        div.play
+            cursor: pointer
+            position: absolute
+            top: 50%
+            left: 50%
+            transform: translate(-50%, -50%)
+            animation-name: showroom_play
+            animation-duration: 1s
+            animation-iteration-count: infinite
+            animation-fill-mode: forwards
+            +screen(s)
+                width: 60px
+                height: 60px
+
+            svg
+                width: 100%
+                height: 100%
+                path
+                    transition: all .2s
+
+            &:hover
+                svg
+                    path
+                        fill: white
+
+    div.pins
+        display: grid
+        grid-template-columns: repeat(2, 1fr)
+        grid-gap: var(--gap)
+        +screen(s)
+            grid-template-columns: 1fr
+
+        a.pin
+            cursor: pointer
+            display: grid
+            grid-gap: var(--small-gap)
+            justify-items: center
+            text-align: center
+            border-radius: 8px
+            padding: var(--medium-gap) var(--gap)
+            background: rgba(255, 255, 255, 0.05)
+            box-shadow: 0 20px 50px 0 rgba(20, 20, 26, 0)
+            transition: all .3s
+            div.link
+                display: grid
+                align-items: center
+                grid-template-columns: auto max-content
+                grid-gap: 10px
+                color: $footer-gray
+                &:hover
+                    color: white
+                    svg
+                        path
+                            stroke: $white
+
+                svg
+                    path
+                        stroke: $footer-gray
+
+            &:hover
+                box-shadow: 0 20px 50px 0 rgba(20, 20, 26, 0.3)
+                img
+                    transform-origin: bottom center
+                    animation-name: showroom_icon
+                    animation-duration: 1s
+                    animation-iteration-count: infinite
+                    animation-fill-mode: forwards
+                    animation-timeline: ease
+
+@keyframes showroom_icon
+    0%
+        transform: translateY(0%)
+    50%
+        transform: translateY(-15%)
+    100%
+        transform: translateY(0%)
+
+@keyframes showroom_play
+    0%
+        transform: translate(-50%, -50%) scale(1)
+    50%
+        transform: translate(-50%, -50%) scale(1.15)
+    100%
+        transform: translate(-50%, -50%) scale(1)

@@ -1,0 +1,20 @@
+extends common/_layout.pug
+include sections/_callback.pug
+
+block links
+    link(rel="stylesheet", href="css/project.css")
+
+block content
+    include sections/project/_main.pug
+    include sections/project/_features.pug
+    include sections/project/_stages.pug
+    include sections/_gallery.pug
+    +callback('Хочу <br> <span>так же!</span>')
+
+    script.
+        header = document.querySelector('header')
+        header.classList.add('transparent')
+
+        window.addEventListener('scroll', event => {
+            this.scrollY > 10 ? header.classList.remove("transparent") : header.classList.add("transparent")
+        })

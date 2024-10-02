@@ -1,0 +1,113 @@
+section.callback
+    padding-top: var(--section-gap)
+    padding-bottom: var(--section-gap)
+
+    div.container
+        display: grid
+        align-items: center
+        grid-template-columns: repeat(2, 1fr)
+        grid-gap: var(--big-gap)
+        grid-column: breakout
+        +screen(s)
+            grid-template-columns: 1fr
+
+    div.form
+        display: grid
+        grid-gap: var(--big-gap)
+
+        div.text
+            display: grid
+            grid-gap: var(--medium-gap)
+
+        div.inputs
+            display: grid
+            grid-gap: var(--gap)
+
+        div.row
+            display: grid
+            grid-template-columns: repeat(2, 1fr)
+            grid-gap: var(--gap)
+            +screen(l)
+                grid-template-columns: 1fr
+
+        form
+            display: grid
+            grid-gap: var(--big-gap)
+
+        small
+            a
+                font-size: inherit
+                font-weight: inherit
+                color: $dark-gray
+                text-decoration: underline
+                &:hover
+                    text-decoration: none
+
+    div.image
+        position: relative
+        display: grid
+        align-items: end
+        height: 100%
+        width: 100%
+        +screen(s)
+            // aspect-ratio: 4 / 3
+
+        div.wrap
+            position: relative
+            // width: max-content
+            // height: max-content
+
+        img.phone
+            position: relative
+            bottom: calc(var(--section-gap) * -1)
+            left: 0
+            width: 100%
+            aspect-ratio: 1462 / 1876
+            // height: calc(100% + var(--section-gap))
+            // min-height: 960px
+            object-fit: contain
+            object-position: left bottom
+            +screen(l)
+                height: 100%
+                // min-height: unset
+                // max-height: 720px
+                height: 720px
+                object-fit: cover
+            +screen(s)
+                height: calc(100% + var(--section-gap))
+                left: 10%
+                object-fit: contain
+                object-position: center bottom
+                // min-height: unset
+                // max-height: unset
+
+        svg
+            position: absolute
+            width: 15%
+            top: 50%
+            left: 37.5%
+            transform: translate(-50%, -20%) rotate(-1deg)
+            +screen(l)
+                top: 50%
+                left: 210px
+                width: 80px
+            +screen(s)
+                top: 60vw
+                left: 47.5%
+                width: 15%
+                transform: translate(-50%, -50%) rotate(-1deg)
+
+        &.animate
+            svg
+                path
+                    fill: rgba(36, 38, 41, 0)
+                    animation: logotype 100ms forwards ease-out
+                    @for $i from 1 through 50
+                        &:nth-child(#{$i})
+                            animation-delay: 50ms * $i
+
+@keyframes logotype
+    0%
+        fill: rgba(36, 38, 41, 0)
+    100%
+        fill: rgba(36, 38, 41, 1)

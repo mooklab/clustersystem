@@ -1,0 +1,60 @@
+dialog(data-modal-name="menu")
+
+    div(data-modal-close).cross
+        include ../../../images/cross.svg
+
+    div.container
+        div.logo
+            a(href="index.html"): img(src="images/logotype_black.svg", alt="")
+        div.socials
+            a(href="index.html", target="blank")
+                include ../../../images/whatsapp.svg
+            a(href="index.html", target="blank")
+                include ../../../images/youtube.svg
+            a(href="index.html", target="blank")
+                include ../../../images/instagram.svg
+            a(href="index.html", target="blank")
+                include ../../../images/telegram.svg
+        div.support
+            strong Обратиться в службу #[br]поддержки
+            div.contacts
+                a(href="tel:84994552610")
+                    img(src="images/phone.svg", alt="")
+                    span +7 (499) 455-26-10
+                a(href="mailto:hello@clustersystem.ru")
+                    img(src="images/email.svg", alt="")
+                    span hello@clustersystem.ru
+        div.apps
+            a(href="https://apps.apple.com/us/app/id1528305720", target="blank"): img(src="images/googleplay.svg", alt="") 
+            a(href="https://play.google.com/store/apps/details?id=ru.clustersystem.Cluster25", target="blank"): img(src="images/appstore.svg", alt="")
+        div.buttons
+            button(data-modal-target="calculate")
+                span Расчет стоимости
+                include ../../../images/calculate.svg
+            button(onclick="createDialog('showroom')")
+                span Записаться в шоурум
+                include ../../../images/plan.svg
+        div.menu.services
+            strong Возможности
+            div
+                a(href="service.html") Освещение
+                a(href="service.html") Безопасность
+                a(href="service.html") Мультимедиа
+                a(href="service.html") Климатконтроль
+                a(href="service.html") Сеть и бесшовный Wi-Fi
+                a(href="service.html") Устройства
+                a(href="service.html") Умный дом
+                a(href="service.html") Готовые решения
+        div.menu.information
+            strong Информация
+            div
+                a(href="information.html") О системе
+                a(href="information.html") Производство
+                a(href="information.html") Проектирование
+                a(href="information.html") Монтаж
+                a(href="information.html") О компании
+                a(href="projects.html") Проекты
+                a(href="contacts.html") Контакты
+                a(href="articles.html") Блог
+    
+        

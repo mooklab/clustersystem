@@ -1,0 +1,22 @@
+section.category
+    padding-top: var(--section-gap)
+    padding-bottom: var(--section-gap)
+    background: $light-gradient
+
+    div.container
+        display: grid
+        grid-gap: var(--big-gap)
+        grid-column: breakout
+
+    div.text
+        display: grid
+        grid-gap: var(--big-gap)
+
+    div.list
+        display: grid
+        grid-template-columns: repeat(3, 1fr)
+        grid-gap: var(--gap)
+        +screen(m)
+            grid-template-columns: repeat(2, 1fr)
+        +screen(s)
+            grid-template-columns: 1fr

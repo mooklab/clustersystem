@@ -1,0 +1,9 @@
+extends common/_layout.pug
+include sections/_callback.pug
+
+block links
+    link(rel="stylesheet", href="css/articles.css")
+
+block content
+    include sections/articles/_articles.pug
+    +callback('<span>Не начали</span> сотрудничать с нами?')

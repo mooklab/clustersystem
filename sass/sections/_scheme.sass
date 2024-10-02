@@ -1,0 +1,71 @@
+section.scheme
+
+    div.container
+        display: grid
+        grid-gap: var(--big-gap)
+        margin-top: var(--section-gap)
+        margin-bottom: var(--section-gap)
+
+    div.list
+        counter-reset: step
+        padding-left: 24px
+        padding-right: 24px
+        div.step
+            display: grid
+            grid-gap: var(--small-gap)
+            position: relative
+            padding: var(--big-gap)
+            border-radius: 24px
+            z-index: 1
+
+            background-image: linear-gradient(to right, #A4ADBA 0%, #A4ADBA 50%, white 50%, white 100%)
+            background-position: top
+            background-size: 8px 1px
+            background-repeat: repeat-x
+
+            strong, span
+                position: relative
+                z-index: 4
+
+            &::before
+                content: counter(step)
+                counter-increment: step
+                width: 48px
+                height: 48px
+                display: grid
+                align-items: center
+                justify-items: center
+                position: absolute
+                top: 50%
+                line-height: 1em
+                transform: translate(-50%, -50%)
+                background: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='48' ry='48' stroke='rgb(113, 125, 141)' stroke-width='1' stroke-dasharray='4%2c 4' stroke-dashoffset='0' stroke-linecap='butt'/%3e%3c/svg%3e") white
+                border-radius: 48px
+                z-index: 4
+
+            div.border
+                position: absolute
+                top: 0
+                width: 48px
+                height: 100%
+                background: red
+                background: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='24' ry='24' stroke='rgb(113, 125, 141)' stroke-width='1' stroke-dasharray='4%2c 4' stroke-dashoffset='0' stroke-linecap='butt'/%3e%3c/svg%3e")
+                border-radius: 24px
+
+            &:last-child
+                background-image: linear-gradient(to right, #A4ADBA 0%, #A4ADBA 50%, white 50%, white 100%), linear-gradient(to right, #A4ADBA 0%, #A4ADBA 50%, white 50%, white 100%)
+                background-position: top, bottom
+
+            &:nth-child(2n-1)
+                &:before
+                    left: 100%
+                div.border
+                    right: 0
+                    clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%)
+
+            &:nth-child(2n)
+                &:before
+                    left: 0
+                div.border
+                    left: 0
+                    clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%)

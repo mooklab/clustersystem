@@ -1,0 +1,36 @@
+dialog[data-modal-name=calculate]
+    display: grid
+    align-items: center
+    justify-items: center
+
+    div.container
+        display: grid
+        max-width: 960px
+
+    div.text
+        display: grid
+        grid-gap: var(--medium-gap)
+        color: $gray
+
+    form
+        display: grid
+        grid-gap: var(--gap)
+
+        div.inputs
+            display: grid
+            grid-template-columns: repeat(2, 1fr)
+            grid-gap: var(--gap)
+            +screen(s)
+                grid-template-columns: 1fr
+
+        small
+            color: $gray
+
+        a
+            font-size: inherit
+            line-height: inherit
+            font-weight: inherit
+            color: $black
+            text-decoration: underline
+            &:hover
+                text-decoration: none

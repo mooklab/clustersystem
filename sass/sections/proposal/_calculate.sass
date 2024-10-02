@@ -1,0 +1,30 @@
+section.calculate
+    padding-top: var(--section-gap)
+    padding-bottom: var(--section-gap)
+
+    div.container
+        display: grid
+        grid-gap: var(--big-gap)
+
+    div.item
+        display: grid
+        align-items: center
+        grid-template-columns: 1fr max-content
+        grid-gap: var(--gap)
+        padding: var(--gap) 0
+        +screen(s)
+            grid-template-columns: 1fr
+
+        &:not(:last-child)
+            border-bottom: 1px solid $footer-gray
+
+            div.price
+                display: grid
+                align-items: center
+                width: 200px
+                height: 100%
+                border-left: 1px solid $footer-gray
+                padding-left: var(--gap)
+                +screen(s)
+                    border-left: unset
+                    padding-left: unset

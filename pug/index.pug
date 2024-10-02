@@ -1,0 +1,25 @@
+extends common/_layout.pug
+
+block links
+    link(rel="stylesheet", href="css/index.css")
+
+block content
+    include sections/index/_main.pug
+    include sections/index/_what.pug
+    include sections/index/_services.pug
+    include sections/_continuity.pug
+    +continuity('<span>Готовые</span> сценарии.')
+    include sections/index/_management.pug
+    include sections/_showroom.pug
+    include sections/_projects.pug
+    include sections/index/_about.pug
+    include sections/_scheme.pug
+    include sections/_faq.pug
+
+    script.
+        header = document.querySelector('header')
+        header.classList.add('transparent')
+
+        window.addEventListener('scroll', event => {
+            this.scrollY > 10 ? header.classList.remove("transparent") : header.classList.add("transparent")
+        })

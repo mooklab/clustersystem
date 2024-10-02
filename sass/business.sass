@@ -1,0 +1,19 @@
+// Общее 
+@import common/_variables
+@import common/_mixins
+
+//Секции
+@import sections/_main
+@import sections/bussiness/_advantages
+@import sections/bussiness/_integration
+@import sections/bussiness/_support
+@import sections/_projects
+@import sections/_showroom
+@import sections/_faq
+@import sections/_callback
+
+// Дополнение стилей
+section.main
+    div.advantages
+        &::after
+            background: $light-gradient

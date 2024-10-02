@@ -1,0 +1,33 @@
+section.faq
+    background: $light-gradient
+
+    div.container
+        display: grid
+        grid-gap: var(--big-gap)
+        margin-top: var(--section-gap)
+        margin-bottom: var(--section-gap)
+
+    div.accordion
+        border-bottom: 1px solid $footer-gray
+        padding: var(--medium-gap) 0px
+        &:first-child
+            border-top: 1px solid $footer-gray
+
+        div.accordion_caption
+            cursor: pointer
+            display: grid
+            align-items: start
+            grid-template-columns: 1fr max-content
+            grid-gap: var(--gap)
+            div.icon
+                height: 0
+                svg
+                    transition: all .5s
+
+        div.accordion_text
+            margin-top: var(--small-gap)
+
+        &.open
+            div.accordion_caption
+                div.icon svg
+                    transform: rotate(225deg)

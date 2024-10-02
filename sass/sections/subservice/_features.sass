@@ -1,0 +1,58 @@
+section.features
+    padding-top: var(--section-gap)
+    padding-bottom: var(--section-gap)
+
+    div.container
+        display: grid
+        grid-gap: var(--big-gap)
+        grid-column: breakout
+
+    div.text
+        display: grid
+        grid-gap: var(--gap)
+        max-width: 960px
+
+    div.list
+        display: grid
+        grid-template-columns: repeat(2, 1fr)
+        grid-gap: var(--gap)
+        +screen(s)
+            grid-template-columns: 1fr
+
+        div.item
+            position: relative
+            border-radius: 8px
+            overflow: hidden
+            aspect-ratio: 1 / 1
+            width: 100%
+            +screen(l)
+                aspect-ratio: 3 / 4
+                height: 500px
+            +screen(s)
+                height: 460px
+
+            img
+                position: absolute
+                top: 0
+                left: 0
+                width: 100%
+                height: 100%
+                object-fit: cover
+                object-position: center center
+                z-index: 0
+
+            div.description
+                position: relative
+                display: grid
+                grid-gap: var(--small-gap)
+                padding: var(--big-gap) var(--big-gap) calc(var(--big-gap) * 2) var(--big-gap)
+                background: linear-gradient(180deg, #0d0f12 0%, rgba(20, 22, 34, 0) 100%)
+                z-index: 1
+                +screen(m)
+                    padding: var(--medium-gap) var(--medium-gap) calc(var(--medium-gap) * 2) var(--medium-gap)
+                h3
+                    color: white
+                span
+                    color: $footer-gray
+                    b
+                        color: white

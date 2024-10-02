@@ -1,0 +1,12 @@
+section.pages {
+  padding-top: var(--section-gap);
+  padding-bottom: var(--section-gap);
+}
+section.pages ul.list {
+  grid-template-columns: repeat(2, 1fr);
+}
+@media (max-width: 960px) {
+  section.pages ul.list {
+    grid-template-columns: 1fr;
+  }
+}/*# sourceMappingURL=pages.css.map */

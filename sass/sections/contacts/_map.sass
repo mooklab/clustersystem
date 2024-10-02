@@ -1,0 +1,14 @@
+section.map
+    padding-top: var(--big-gap)
+    padding-bottom: var(--section-gap)
+
+    div#map
+        grid-column: breakout
+        aspect-ratio: 16 / 9
+        +screen(m)
+            aspect-ratio: 4 / 3
+        +screen(s)
+            aspect-ratio: 3 / 4
+
+        *
+            font-size: 14px

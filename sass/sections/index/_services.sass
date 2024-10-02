@@ -1,0 +1,93 @@
+section.services
+    background: $light-gradient
+    padding-top: var(--section-gap)
+    padding-bottom: var(--section-gap)
+
+    div.container
+        grid-column: breakout
+        display: grid
+        grid-gap: var(--big-gap)
+
+    div.grid
+        display: grid
+        grid-template-columns: repeat(2, 1fr)
+        grid-gap: var(--small-gap)
+        +screen(1460px)
+            grid-template-columns: 1fr
+
+    a.service
+        display: grid
+        grid-template-rows: 1fr max-content
+        grid-gap: var(--gap)
+        box-shadow: 10px 10px 30px 0 rgba(32, 64, 94, 0.05)
+        background: $white
+        padding: var(--gap)
+        border-radius: 8px
+        transition: all .3s
+        &:nth-child(2n)
+            animation-delay: .25s
+
+        &:hover
+            box-shadow: 10px 10px 30px 0 rgba(32, 64, 94, 0.15)
+            div.description
+                div.more
+                    small
+                        max-width: 200px
+                        padding: 0 20px
+
+        div.description
+            display: grid
+            align-items: center
+            grid-template-rows: max-content 1fr max-content
+            grid-gap: var(--gap)
+            +screen(1460px)
+                grid-template-rows: max-content max-content
+                grid-template-columns: max-content 1fr
+            +screen(s)
+                grid-template-rows: max-content 1fr max-content
+                grid-template-columns: 1fr
+
+            div.image
+                img
+                    width: 360px
+                    margin-top: calc(var(--gap) * -1)
+                    margin-left: calc(var(--gap) * -1)
+                    +screen(m)
+                        width: 240px
+
+            div.text
+                display: grid
+                align-content: start
+                grid-gap: var(--small-gap)
+
+            div.more
+                justify-self: end
+
+        div.list
+            display: grid
+            grid-template-columns: repeat(3, 1fr)
+            grid-gap: 10px
+            +screen(1460px)
+                grid-template-columns: repeat(4, 1fr)
+            +screen(m)
+                grid-template-columns: repeat(3, 1fr)
+            +screen(s)
+                grid-template-columns: 1fr
+
+            div.item
+                display: grid
+                align-content: start
+                justify-items: center
+                grid-gap: 20px
+                padding: var(--gap)
+                border-radius: 8px
+                text-align: center
+                color: $dark-gray
+                background: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='8' ry='8' stroke='rgb(113, 125, 141)' stroke-width='1' stroke-dasharray='4%2c 4' stroke-dashoffset='0' stroke-linecap='butt'/%3e%3c/svg%3e")
+                +screen(s)
+                    grid-template-columns: max-content 1fr
+                    align-items: center
+                    justify-items: start
+                    text-align: left
+                    br
+                        display: none

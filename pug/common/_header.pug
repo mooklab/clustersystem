@@ -1,0 +1,36 @@
+header
+    div.container
+
+        div.contacts
+            a(href="index.html").logotype
+                img(src="images/logotype_symbol_white.svg", alt="").symbol
+                img(src="images/logotype.svg", alt="").full
+            a(href="tel:84994552610").phone
+                include ../../images/phone.svg
+                span +7 (499) 455-26-10
+            //- a(href="mailto:hello@clustersystem.ru").email
+            //-     include ../../images/email.svg
+
+        div.socials
+            a(href="index.html", target="blank")
+                include ../../images/whatsapp.svg
+            a(href="index.html", target="blank")
+                include ../../images/youtube.svg
+            a(href="index.html", target="blank")
+                include ../../images/instagram.svg
+            a(href="index.html", target="blank")
+                include ../../images/telegram.svg
+
+
+        div(data-modal-target="menu").menu
+            div.icon
+                div
+                div
+
+        div.buttons
+            div(data-modal-target="calculate").button
+                include ../../images/calculate.svg
+                span Расчет стоимости
+            div(data-modal-target="showroom").button
+                include ../../images/plan.svg
+                span Записаться в шоурум

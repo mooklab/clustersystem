@@ -1,0 +1,29 @@
+section.contacts
+    padding-top: var(--section-gap)
+
+    div.container
+        display: grid
+        grid-gap: var(--big-gap)
+
+    div.tabs
+        display: grid
+        grid-gap: var(--big-gap)
+
+    div.swiper
+        width: 100%
+        min-width: 0
+
+    div.swiper-wrapper
+        height: auto !important
+
+    div.swiper-slide
+        display: grid
+        grid-gap: var(--medium-gap)
+        scroll-margin-top: 100px
+
+        div.row
+            display: grid
+            grid-template-columns: repeat(2, 1fr)
+            grid-gap: var(--gap)
+            +screen(s)
+                grid-template-columns: 1fr

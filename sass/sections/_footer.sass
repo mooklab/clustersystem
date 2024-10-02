@@ -1,0 +1,184 @@
+footer
+    background: $dark-gradient
+    padding: calc(var(--section-gap) / 3 * 2) 0
+
+    div.container
+        display: grid
+        grid-gap: var(--big-gap)
+        grid-column: breakout
+
+    a
+        &:hover
+            color: white !important
+
+    div.top
+        display: grid
+        align-items: start
+        grid-template-areas: 'Logotype Services Information Support Buttons' 'Apps Services Information Support Buttons' 'Apps Services Information Socials Buttons'
+        grid-template-columns: max-content 1fr 1fr max-content max-content
+        grid-template-rows: 60px max-content 1fr
+        grid-gap: var(--big-gap)
+        +screen(1440px)
+            grid-template-areas: 'Logotype Support Buttons' 'Services Information Apps' 'Services Information Socials'
+            grid-template-columns: repeat(3, 1fr)
+            grid-template-rows: unset
+        +screen(m)
+            grid-template-areas: 'Logotype Logotype' 'Support Support' 'Buttons Buttons' 'Services Information' 'Apps Apps' 'Socials Socials'
+            grid-template-columns: repeat(2, 1fr)
+            grid-gap: var(--big-gap) var(--gap)
+
+        strong
+            font-weight: 600
+            font-size: 21px
+            color: $white
+            +screen(m)
+                font-size: 16px
+
+        div.socials
+            grid-area: Socials
+            display: grid
+            grid-auto-flow: column
+            grid-auto-columns: max-content
+            grid-gap: var(--gap)
+            align-self: end
+            a
+                line-height: 0
+                &:hover
+                    svg
+                        path
+                            fill: white
+            svg
+                path
+                    fill: $footer-gray
+
+        div.logo
+            grid-area: Logotype
+            display: grid
+            grid-gap: var(--gap)
+            img
+                +screen(s)
+                    width: 140px
+
+        div.apps
+            grid-area: Apps
+            display: grid
+            grid-auto-flow: column
+            grid-auto-columns: max-content
+            grid-gap: 20px
+
+        div.information
+            grid-area: Information
+
+        div.services
+            grid-area: Services
+
+        div.menu
+            display: grid
+            grid-gap: var(--gap)
+            div
+                display: grid
+                grid-gap: 10px
+            a
+                font-size: 14px
+                font-weight: 400
+                color: $footer-gray
+                +screen(m)
+                    font-size: 12px
+
+        div.support
+            grid-area: Support
+            display: grid
+            grid-gap: var(--gap)
+            width: 100%
+            +screen(s)
+                grid-gap: 12px
+            div.contacts
+                display: grid
+                grid-gap: var(--small-gap)
+            br
+                +screen(m)
+                    display: none
+            a
+                display: grid
+                align-items: center
+                grid-template-columns: max-content 1fr
+                grid-gap: 15px
+                font-weight: 400
+                font-size: 16px
+                color: $footer-gray
+                +screen(m)
+                    font-size: 12px
+
+        div.buttons
+            grid-area: Buttons
+            display: grid
+            grid-gap: 10px
+            width: 280px
+            +screen(m)
+                grid-auto-flow: column
+                grid-auto-columns: 1fr
+                width: 100%
+            +screen(s)
+                grid-auto-flow: row
+            button
+                cursor: pointer
+                display: grid
+                align-items: center
+                grid-template-columns: 1fr max-content
+                grid-gap: 15px
+                background: transparent
+                border: 1px solid $gray
+                border-radius: 4px
+                padding: 15px
+                width: 100%
+                transition: all .3s
+                &:hover
+                    background: $black
+                    border: 1px solid transparent
+                span
+                    font-size: 14px
+                    color: $white
+                    text-align: left
+
+    div.bottom
+        display: grid
+        align-items: center
+        grid-template-areas: "Copyright Links Upgrade"
+        grid-template-columns: max-content 1fr max-content
+        grid-gap: var(--big-gap)
+        +screen(1440px)
+            grid-template-columns: repeat(3, 1fr)
+        +screen(m)
+            grid-template-areas: 'Links Links' 'Copyright Upgrade'
+            grid-template-columns: repeat(2, 1fr)
+
+        span.copyright
+            grid-area: Copyright
+            font-size: 14px
+            line-height: 150%
+            color: $footer-gray
+            opacity: 0.5
+            +screen(m)
+                font-size: 12px
+        div.links
+            grid-area: Links
+            display: grid
+            justify-content: center
+            grid-auto-flow: column
+            grid-auto-columns: max-content
+            grid-gap: var(--big-gap)
+            +screen(1440px)
+                grid-auto-flow: row
+                grid-auto-rows: max-content
+                justify-content: start
+                grid-gap: 10px
+            a
+                font-size: 14px
+                color: $footer-gray
+                +screen(m)
+                    font-size: 12px
+        a.upgrade
+            grid-area: Upgrade
+            justify-self: end
+            img
+                border-radius: unset

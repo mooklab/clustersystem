@@ -1,0 +1,811 @@
+section.main {
+  background: #1b1d21;
+  padding-top: calc(var(--section-gap) + var(--header));
+  padding-bottom: var(--gap);
+  min-height: 100vh;
+  z-index: 1;
+}
+section.main div.container {
+  display: grid;
+  grid-template-rows: 1fr -webkit-max-content;
+  grid-template-rows: 1fr max-content;
+  grid-gap: var(--section-gap);
+}
+section.main div.preview {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+section.main div.preview::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(13, 16, 18, 0.5);
+  z-index: 1;
+}
+section.main div.preview img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center center;
+     object-position: center center;
+}
+section.main div.intro {
+  position: relative;
+  display: grid;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  grid-gap: var(--big-gap);
+  height: 100%;
+  z-index: 2;
+  color: #fff;
+}
+section.main div.intro div.text {
+  display: grid;
+  grid-gap: var(--medium-gap);
+}
+section.main div.intro div.title {
+  display: grid;
+  grid-gap: 10px;
+}
+section.main div.advantages {
+  position: relative;
+}
+section.main div.advantages div.list {
+  position: relative;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  grid-auto-flow: column;
+  grid-auto-columns: auto;
+  grid-gap: var(--gap);
+  border-radius: 8px;
+  padding: var(--medium-gap);
+  background: -webkit-gradient(linear, left top, right top, from(#313840), to(#252a2f));
+  background: linear-gradient(90deg, #313840 0%, #252a2f 100%);
+  width: 1000px;
+  z-index: 2;
+}
+@media (max-width: 1280px) {
+  section.main div.advantages div.list {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
+    grid-auto-columns: 1fr;
+    width: 100%;
+  }
+}
+@media (max-width: 640px) {
+  section.main div.advantages div.list {
+    grid-auto-flow: row;
+    grid-template-columns: 1fr;
+    grid-gap: var(--medium-gap);
+  }
+}
+section.main div.advantages div.item {
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  grid-template-columns: -webkit-max-content 1fr;
+  grid-template-columns: max-content 1fr;
+  grid-gap: var(--gap);
+}
+@media (max-width: 1280px) {
+  section.main div.advantages div.item {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+  }
+}
+section.main div.advantages div.item svg path {
+  stroke: #a4adba;
+}
+section.main div.advantages div.item:not(:last-child) {
+  border-right: 1px dashed rgba(164, 173, 186, 0.5);
+  padding-right: var(--gap);
+}
+@media (max-width: 640px) {
+  section.main div.advantages div.item:not(:last-child) {
+    border-right: unset;
+    padding-right: unset;
+    padding-bottom: var(--medium-gap);
+    border-bottom: 1px dashed rgba(164, 173, 186, 0.5);
+  }
+}
+section.main div.advantages div.item div.text {
+  display: grid;
+  grid-gap: 10px;
+  color: #a4adba;
+}
+section.main div.advantages div.item div.text span {
+  color: #fff;
+}
+section.main div.advantages::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  height: calc(50% + var(--gap));
+  width: 100vw;
+  background: white;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+@media (max-width: 640px) {
+  section.main div.advantages::after {
+    top: calc(var(--gap) * -1);
+    height: calc(100% + var(--gap) * 2);
+  }
+}
+section.main div.params {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: var(--medium-gap) var(--gap);
+}
+@media (max-width: 640px) {
+  section.main div.params {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+section.main div.params div.param {
+  display: grid;
+  grid-gap: 10px;
+}
+section.main div.params div.param small {
+  color: #a4adba;
+}
+section.main div.params div.param h2 {
+  font-size: 40px;
+  color: white;
+}
+@media (max-width: 960px) {
+  section.main div.params div.param h2 {
+    font-size: 30px;
+  }
+}
+
+section.features {
+  padding-top: var(--section-gap);
+  padding-bottom: var(--section-gap);
+  background: -webkit-gradient(linear, left top, right top, from(#fbfbfd), to(#f5f5f7));
+  background: linear-gradient(90deg, #fbfbfd 0%, #f5f5f7 100%);
+}
+section.features div.container {
+  display: grid;
+  grid-gap: var(--big-gap);
+  grid-column: breakout;
+}
+section.features div.list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: var(--gap);
+}
+@media (max-width: 960px) {
+  section.features div.list {
+    grid-template-columns: 1fr;
+  }
+}
+section.features div.feature {
+  display: grid;
+  -ms-flex-line-pack: start;
+      align-content: start;
+  grid-template-columns: -webkit-max-content 1fr;
+  grid-template-columns: max-content 1fr;
+  grid-gap: var(--gap);
+  -webkit-box-shadow: 10px 10px 30px 0 rgba(32, 64, 94, 0.05);
+          box-shadow: 10px 10px 30px 0 rgba(32, 64, 94, 0.05);
+  background: #fff;
+  padding: var(--gap);
+  border-radius: 8px;
+}
+@media (max-width: 1280px) {
+  section.features div.feature {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 960px) {
+  section.features div.feature {
+    grid-template-columns: -webkit-max-content 1fr;
+    grid-template-columns: max-content 1fr;
+  }
+}
+@media (max-width: 640px) {
+  section.features div.feature {
+    grid-template-columns: 1fr;
+  }
+}
+section.features div.feature div.image img {
+  width: 240px;
+  margin-top: calc(var(--gap) * -1);
+  margin-left: calc(var(--gap) * -1);
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: left top;
+     object-position: left top;
+}
+@media (max-width: 640px) {
+  section.features div.feature div.image img {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+section.features div.feature div.text {
+  display: grid;
+  grid-gap: var(--gap);
+  margin-top: var(--gap);
+}
+@media (max-width: 1280px) {
+  section.features div.feature div.text {
+    margin-top: unset;
+  }
+}
+@media (max-width: 960px) {
+  section.features div.feature div.text {
+    margin-top: var(--gap);
+  }
+}
+@media (max-width: 640px) {
+  section.features div.feature div.text {
+    margin-top: unset;
+  }
+}
+section.features div.feature div.text span {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+section.features div.feature div.text span.more {
+  display: block;
+  overflow: visible;
+}
+section.features div.feature div.text span.more + a.more small.show {
+  display: none;
+}
+section.features div.feature div.text span.more + a.more small.hide {
+  display: inline;
+}
+section.features div.feature div.text span.more + a.more div.icon {
+  -webkit-transform: rotate(270deg);
+      -ms-transform: rotate(270deg);
+          transform: rotate(270deg);
+}
+section.features div.feature a.more {
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: end;
+  grid-template-columns: auto -webkit-max-content;
+  grid-template-columns: auto max-content;
+  grid-gap: var(--small-gap);
+  color: #242629;
+  font-weight: 500;
+}
+section.features div.feature a.more small {
+  text-align: right;
+}
+section.features div.feature a.more small.show {
+  display: inline;
+}
+section.features div.feature a.more small.hide {
+  display: none;
+}
+section.features div.feature a.more div.icon {
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-items: center;
+  background: #242629;
+  border-radius: 20px;
+  width: 40px;
+  height: 40px;
+  -webkit-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+          transform: rotate(90deg);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+section.features div.feature a.more div.icon svg path {
+  stroke: white;
+}
+
+section.stages {
+  padding-bottom: var(--section-gap);
+  background: -webkit-gradient(linear, left top, right top, from(#fbfbfd), to(#f5f5f7));
+  background: linear-gradient(90deg, #fbfbfd 0%, #f5f5f7 100%);
+}
+section.stages div.container {
+  display: grid;
+  grid-gap: var(--big-gap);
+  grid-column: breakout;
+}
+section.stages div.tabs {
+  display: grid;
+  grid-gap: var(--big-gap);
+}
+section.stages div.swiper {
+  width: 100%;
+  min-width: 0;
+}
+section.stages div.tabs_contents div.swiper-slide {
+  display: grid;
+  grid-gap: var(--big-gap);
+}
+section.stages div.tabs_contents div.swiper-slide div.text {
+  display: grid;
+  grid-gap: var(--small-gap);
+  max-width: 640px;
+}
+section.stages div.tabs_contents div.swiper-slide img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center center;
+     object-position: center center;
+  border-radius: 8px;
+}
+section.stages div.tabs_contents div.row {
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: var(--big-gap);
+}
+@media (max-width: 960px) {
+  section.stages div.tabs_contents div.row {
+    grid-template-columns: 1fr;
+  }
+}
+
+section.gallery div.container {
+  grid-column: full;
+}
+section.gallery div.swiper {
+  width: 100%;
+  height: 85vh;
+  min-width: 0;
+}
+section.gallery div.swiper img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center center;
+     object-position: center center;
+}
+section.gallery div.counter {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: -webkit-max-content;
+  grid-auto-columns: max-content;
+  grid-gap: 10px;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+  position: absolute;
+  top: var(--big-gap);
+  right: var(--big-gap);
+  z-index: 5;
+  text-shadow: 0px 0px 150px rgb(0, 0, 0), 0px 0px 200px rgb(0, 0, 0);
+}
+@media (max-width: 960px) {
+  section.gallery div.counter {
+    top: var(--medium-gap);
+    right: var(--medium-gap);
+  }
+}
+@media (max-width: 640px) {
+  section.gallery div.counter {
+    top: var(--gap);
+    right: var(--gap);
+  }
+}
+section.gallery div.counter span.current {
+  font-weight: 600;
+  font-size: 100px;
+  line-height: 100%;
+  color: #fff;
+}
+@media (max-width: 960px) {
+  section.gallery div.counter span.current {
+    font-size: 50px;
+  }
+}
+section.gallery div.counter span.total {
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 175%;
+  color: #fff;
+  opacity: 0.5;
+}
+@media (max-width: 960px) {
+  section.gallery div.counter span.total {
+    font-size: 20px;
+  }
+}
+section.gallery div.swiper-control {
+  position: absolute;
+  padding: var(--big-gap);
+  bottom: 0px;
+  right: 0px;
+}
+@media (max-width: 960px) {
+  section.gallery div.swiper-control {
+    padding: var(--medium-gap);
+  }
+}
+@media (max-width: 640px) {
+  section.gallery div.swiper-control {
+    padding: var(--gap);
+  }
+}
+
+section.callback {
+  padding-top: var(--section-gap);
+  padding-bottom: var(--section-gap);
+}
+section.callback div.container {
+  display: grid;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: var(--big-gap);
+  grid-column: breakout;
+}
+@media (max-width: 640px) {
+  section.callback div.container {
+    grid-template-columns: 1fr;
+  }
+}
+section.callback div.form {
+  display: grid;
+  grid-gap: var(--big-gap);
+}
+section.callback div.form div.text {
+  display: grid;
+  grid-gap: var(--medium-gap);
+}
+section.callback div.form div.inputs {
+  display: grid;
+  grid-gap: var(--gap);
+}
+section.callback div.form div.row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: var(--gap);
+}
+@media (max-width: 1280px) {
+  section.callback div.form div.row {
+    grid-template-columns: 1fr;
+  }
+}
+section.callback div.form form {
+  display: grid;
+  grid-gap: var(--big-gap);
+}
+section.callback div.form small a {
+  font-size: inherit;
+  font-weight: inherit;
+  color: #242629;
+  text-decoration: underline;
+}
+section.callback div.form small a:hover {
+  text-decoration: none;
+}
+section.callback div.image {
+  position: relative;
+  display: grid;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: end;
+  height: 100%;
+  width: 100%;
+}
+section.callback div.image div.wrap {
+  position: relative;
+}
+section.callback div.image img.phone {
+  position: relative;
+  bottom: calc(var(--section-gap) * -1);
+  left: 0;
+  width: 100%;
+  aspect-ratio: 1462/1876;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: left bottom;
+     object-position: left bottom;
+}
+@media (max-width: 1280px) {
+  section.callback div.image img.phone {
+    height: 100%;
+    height: 720px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+}
+@media (max-width: 640px) {
+  section.callback div.image img.phone {
+    height: calc(100% + var(--section-gap));
+    left: 10%;
+    -o-object-fit: contain;
+       object-fit: contain;
+    -o-object-position: center bottom;
+       object-position: center bottom;
+  }
+}
+section.callback div.image svg {
+  position: absolute;
+  width: 15%;
+  top: 50%;
+  left: 37.5%;
+  -webkit-transform: translate(-50%, -20%) rotate(-1deg);
+      -ms-transform: translate(-50%, -20%) rotate(-1deg);
+          transform: translate(-50%, -20%) rotate(-1deg);
+}
+@media (max-width: 1280px) {
+  section.callback div.image svg {
+    top: 50%;
+    left: 210px;
+    width: 80px;
+  }
+}
+@media (max-width: 640px) {
+  section.callback div.image svg {
+    top: 60vw;
+    left: 47.5%;
+    width: 15%;
+    -webkit-transform: translate(-50%, -50%) rotate(-1deg);
+        -ms-transform: translate(-50%, -50%) rotate(-1deg);
+            transform: translate(-50%, -50%) rotate(-1deg);
+  }
+}
+section.callback div.image.animate svg path {
+  fill: rgba(36, 38, 41, 0);
+  -webkit-animation: logotype 100ms forwards ease-out;
+          animation: logotype 100ms forwards ease-out;
+}
+section.callback div.image.animate svg path:nth-child(1) {
+  -webkit-animation-delay: 50ms;
+          animation-delay: 50ms;
+}
+section.callback div.image.animate svg path:nth-child(2) {
+  -webkit-animation-delay: 100ms;
+          animation-delay: 100ms;
+}
+section.callback div.image.animate svg path:nth-child(3) {
+  -webkit-animation-delay: 150ms;
+          animation-delay: 150ms;
+}
+section.callback div.image.animate svg path:nth-child(4) {
+  -webkit-animation-delay: 200ms;
+          animation-delay: 200ms;
+}
+section.callback div.image.animate svg path:nth-child(5) {
+  -webkit-animation-delay: 250ms;
+          animation-delay: 250ms;
+}
+section.callback div.image.animate svg path:nth-child(6) {
+  -webkit-animation-delay: 300ms;
+          animation-delay: 300ms;
+}
+section.callback div.image.animate svg path:nth-child(7) {
+  -webkit-animation-delay: 350ms;
+          animation-delay: 350ms;
+}
+section.callback div.image.animate svg path:nth-child(8) {
+  -webkit-animation-delay: 400ms;
+          animation-delay: 400ms;
+}
+section.callback div.image.animate svg path:nth-child(9) {
+  -webkit-animation-delay: 450ms;
+          animation-delay: 450ms;
+}
+section.callback div.image.animate svg path:nth-child(10) {
+  -webkit-animation-delay: 500ms;
+          animation-delay: 500ms;
+}
+section.callback div.image.animate svg path:nth-child(11) {
+  -webkit-animation-delay: 550ms;
+          animation-delay: 550ms;
+}
+section.callback div.image.animate svg path:nth-child(12) {
+  -webkit-animation-delay: 600ms;
+          animation-delay: 600ms;
+}
+section.callback div.image.animate svg path:nth-child(13) {
+  -webkit-animation-delay: 650ms;
+          animation-delay: 650ms;
+}
+section.callback div.image.animate svg path:nth-child(14) {
+  -webkit-animation-delay: 700ms;
+          animation-delay: 700ms;
+}
+section.callback div.image.animate svg path:nth-child(15) {
+  -webkit-animation-delay: 750ms;
+          animation-delay: 750ms;
+}
+section.callback div.image.animate svg path:nth-child(16) {
+  -webkit-animation-delay: 800ms;
+          animation-delay: 800ms;
+}
+section.callback div.image.animate svg path:nth-child(17) {
+  -webkit-animation-delay: 850ms;
+          animation-delay: 850ms;
+}
+section.callback div.image.animate svg path:nth-child(18) {
+  -webkit-animation-delay: 900ms;
+          animation-delay: 900ms;
+}
+section.callback div.image.animate svg path:nth-child(19) {
+  -webkit-animation-delay: 950ms;
+          animation-delay: 950ms;
+}
+section.callback div.image.animate svg path:nth-child(20) {
+  -webkit-animation-delay: 1000ms;
+          animation-delay: 1000ms;
+}
+section.callback div.image.animate svg path:nth-child(21) {
+  -webkit-animation-delay: 1050ms;
+          animation-delay: 1050ms;
+}
+section.callback div.image.animate svg path:nth-child(22) {
+  -webkit-animation-delay: 1100ms;
+          animation-delay: 1100ms;
+}
+section.callback div.image.animate svg path:nth-child(23) {
+  -webkit-animation-delay: 1150ms;
+          animation-delay: 1150ms;
+}
+section.callback div.image.animate svg path:nth-child(24) {
+  -webkit-animation-delay: 1200ms;
+          animation-delay: 1200ms;
+}
+section.callback div.image.animate svg path:nth-child(25) {
+  -webkit-animation-delay: 1250ms;
+          animation-delay: 1250ms;
+}
+section.callback div.image.animate svg path:nth-child(26) {
+  -webkit-animation-delay: 1300ms;
+          animation-delay: 1300ms;
+}
+section.callback div.image.animate svg path:nth-child(27) {
+  -webkit-animation-delay: 1350ms;
+          animation-delay: 1350ms;
+}
+section.callback div.image.animate svg path:nth-child(28) {
+  -webkit-animation-delay: 1400ms;
+          animation-delay: 1400ms;
+}
+section.callback div.image.animate svg path:nth-child(29) {
+  -webkit-animation-delay: 1450ms;
+          animation-delay: 1450ms;
+}
+section.callback div.image.animate svg path:nth-child(30) {
+  -webkit-animation-delay: 1500ms;
+          animation-delay: 1500ms;
+}
+section.callback div.image.animate svg path:nth-child(31) {
+  -webkit-animation-delay: 1550ms;
+          animation-delay: 1550ms;
+}
+section.callback div.image.animate svg path:nth-child(32) {
+  -webkit-animation-delay: 1600ms;
+          animation-delay: 1600ms;
+}
+section.callback div.image.animate svg path:nth-child(33) {
+  -webkit-animation-delay: 1650ms;
+          animation-delay: 1650ms;
+}
+section.callback div.image.animate svg path:nth-child(34) {
+  -webkit-animation-delay: 1700ms;
+          animation-delay: 1700ms;
+}
+section.callback div.image.animate svg path:nth-child(35) {
+  -webkit-animation-delay: 1750ms;
+          animation-delay: 1750ms;
+}
+section.callback div.image.animate svg path:nth-child(36) {
+  -webkit-animation-delay: 1800ms;
+          animation-delay: 1800ms;
+}
+section.callback div.image.animate svg path:nth-child(37) {
+  -webkit-animation-delay: 1850ms;
+          animation-delay: 1850ms;
+}
+section.callback div.image.animate svg path:nth-child(38) {
+  -webkit-animation-delay: 1900ms;
+          animation-delay: 1900ms;
+}
+section.callback div.image.animate svg path:nth-child(39) {
+  -webkit-animation-delay: 1950ms;
+          animation-delay: 1950ms;
+}
+section.callback div.image.animate svg path:nth-child(40) {
+  -webkit-animation-delay: 2000ms;
+          animation-delay: 2000ms;
+}
+section.callback div.image.animate svg path:nth-child(41) {
+  -webkit-animation-delay: 2050ms;
+          animation-delay: 2050ms;
+}
+section.callback div.image.animate svg path:nth-child(42) {
+  -webkit-animation-delay: 2100ms;
+          animation-delay: 2100ms;
+}
+section.callback div.image.animate svg path:nth-child(43) {
+  -webkit-animation-delay: 2150ms;
+          animation-delay: 2150ms;
+}
+section.callback div.image.animate svg path:nth-child(44) {
+  -webkit-animation-delay: 2200ms;
+          animation-delay: 2200ms;
+}
+section.callback div.image.animate svg path:nth-child(45) {
+  -webkit-animation-delay: 2250ms;
+          animation-delay: 2250ms;
+}
+section.callback div.image.animate svg path:nth-child(46) {
+  -webkit-animation-delay: 2300ms;
+          animation-delay: 2300ms;
+}
+section.callback div.image.animate svg path:nth-child(47) {
+  -webkit-animation-delay: 2350ms;
+          animation-delay: 2350ms;
+}
+section.callback div.image.animate svg path:nth-child(48) {
+  -webkit-animation-delay: 2400ms;
+          animation-delay: 2400ms;
+}
+section.callback div.image.animate svg path:nth-child(49) {
+  -webkit-animation-delay: 2450ms;
+          animation-delay: 2450ms;
+}
+section.callback div.image.animate svg path:nth-child(50) {
+  -webkit-animation-delay: 2500ms;
+          animation-delay: 2500ms;
+}
+
+@-webkit-keyframes logotype {
+  0% {
+    fill: rgba(36, 38, 41, 0);
+  }
+  100% {
+    fill: rgb(36, 38, 41);
+  }
+}
+
+@keyframes logotype {
+  0% {
+    fill: rgba(36, 38, 41, 0);
+  }
+  100% {
+    fill: rgb(36, 38, 41);
+  }
+}/*# sourceMappingURL=project.css.map */

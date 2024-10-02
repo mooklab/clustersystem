@@ -1,0 +1,30 @@
+section.showroom
+    div.text
+        div.title
+            h3 Посетите наш
+            h2 ШОУРУМ.
+        p.observe.aft Наш шоурум представляет из себя #[span полноценную квартиру-офис], оснащенную системой умного дома, где #[span вы с комфортом сможете посмотреть на возможности системы] умного дома Кластер
+        button(data-modal-target="showroom")
+            span Записаться в шоурум
+            div.borders
+                div
+                div
+                div
+                div
+    div.video
+        img(src="images/apartments/6.webp", alt="").preview
+        div(data-modal-target="video", data-video-src="http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4").play
+            include ../../images/play.svg
+    div.pins
+        a(href="contacts.html#moscow").pin
+            img(src="images/pin.svg", alt="")
+            span Москва, Ленинградский пр. 36 с. 40, ЖК ВТБ Арена Парк
+            div.link
+                small на карте
+                include ../../images/arrow.svg
+        a(href="contacts.html#petersburg").pin
+            img(src="images/pin.svg", alt="")
+            span Санкт-Петербург, Кушелевская дорога 12
+            div.link
+                small на карте
+                include ../../images/arrow.svg

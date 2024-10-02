@@ -1,0 +1,187 @@
+header
+    position: fixed
+    top: 0
+    left: 0
+    width: max-content
+    height: 100vh
+    background: linear-gradient(180deg, #313840 0%, #252a2f 100%)
+    z-index: 999
+    grid-template-columns: 1fr
+    padding: var(--gap) var(--small-gap)
+    transition: all .5s
+    +screen(l)
+        position: sticky
+        height: auto
+        background: unset
+        background-color: $dark-gray
+        width: 100%
+        padding: var(--gap)
+
+    div.container
+        display: grid
+        grid-template-rows: max-content max-content 1fr max-content
+        grid-gap: 30px
+        grid-column: unset
+        +screen(l)
+            align-items: center
+            justify-items: center
+            grid-template-columns: max-content 1fr 1fr max-content
+            grid-template-rows: 1fr
+        +screen(m)
+            grid-template-columns: max-content 1fr max-content
+        +screen(s)
+            grid-template-columns: 1fr max-content
+            justify-items: start
+
+    div.socials
+        display: grid
+        justify-items: center
+        grid-gap: var(--gap)
+        +screen(l)
+            grid-auto-flow: column
+            grid-auto-columns: max-content
+        +screen(m)
+            display: none
+        a
+            line-height: 0
+            &:hover
+                svg
+                    path
+                        fill: white
+        svg
+            path
+                fill: $footer-gray
+
+    div.contacts
+        display: grid
+        grid-auto-flow: row
+        grid-auto-rows: max-content
+        justify-items: center
+        grid-gap: var(--gap)
+        +screen(l)
+            // grid-auto-flow: column
+            // grid-template-columns: max-content 1fr
+            display: contents
+
+        a.logotype
+            display: block
+            img.symbol
+                display: block
+                +screen(l)
+                    display: none
+            img.full
+                display: none
+                width: 140px
+                +screen(l)
+                    display: block
+
+        a
+            display: grid
+            align-items: center
+            grid-auto-flow: column
+            grid-auto-columns: max-content
+            grid-gap: 15px
+            color: $white
+            &:hover
+                svg
+                    path
+                        fill: white
+
+            svg
+                path
+                    transition: all .3s
+
+            &.email
+                +screen(l)
+                    display: none
+
+            &.phone
+                +screen(s)
+                    display: none
+
+        span
+            display: none
+            +screen(l)
+                display: block
+
+    div.menu
+        display: grid
+        align-items: center
+        justify-items: center
+
+        div.icon
+            cursor: pointer
+            display: grid
+            align-content: center
+            justify-items: end
+            grid-gap: 5px
+            padding: 20px 0
+            +screen(l)
+                padding: 10px 0
+
+            div:first-child
+                width: 40px
+                height: 2px
+                background-color: $white
+            div:last-child
+                width: 30px
+                height: 2px
+                background-color: $white
+                transition: all .2s
+
+            &:hover
+                div:last-child
+                    width: 40px
+
+    div.buttons
+        display: grid
+        grid-gap: 10px
+        justify-self: center
+        +screen(l)
+            display: none
+        div.button
+            position: relative
+            cursor: pointer
+            display: grid
+            align-items: center
+            justify-items: center
+            border-radius: 4px
+            border: 1px solid $gray
+            width: 48px
+            height: 48px
+
+            &:hover
+                span
+                    max-width: 400px
+                    padding-left: calc(48px + 12px)
+                    padding-right: 24px
+                    opacity: 1
+
+            span
+                display: grid
+                align-items: center
+                position: absolute
+                top: 0
+                left: 0
+                height: 100%
+                padding-left: calc(48px + 12px)
+                padding-right: 24px
+                color: white
+                background: $black
+                border-radius: 4px
+                z-index: -1
+                font-size: 14px
+                line-height: 1em
+                white-space: nowrap
+                overflow: hidden
+                max-width: 0px
+                padding-left: 0px
+                padding-right: 0px
+                opacity: 0
+                transition: all .5s
+
+    &.transparent
+        position: fixed
+        margin-bottom: -90px
+        +screen(l)
+            background-color: transparent
