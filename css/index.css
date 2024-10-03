@@ -203,7 +203,7 @@ section.what div.image {
   display: grid;
   grid-template-columns: [full-start] var(--full) [breakout-start] var(--breakout) [content-start] var(--content) [content-end] var(--breakout) [breakout-end] var(--full) [full-end];
   z-index: 9;
-  aspect-ratio: 732/960;
+  aspect-ratio: 960/2196;
 }
 section.what div.image div.scroll {
   position: relative;
@@ -215,12 +215,21 @@ section.what div.image div.scroll img {
   margin-left: 50%;
   height: 70vh;
   aspect-ratio: 960/732;
-  max-width: unset;
   max-height: 1000px;
   min-height: 700px;
   -webkit-transform: translateX(-50%);
       -ms-transform: translateX(-50%);
           transform: translateX(-50%);
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center center;
+     object-position: center center;
+}
+@media (max-width: 640px) {
+  section.what div.image div.scroll img {
+    max-width: unset;
+    min-height: 500px;
+  }
 }
 section.what div.image div.scroll div.tags {
   position: sticky;
@@ -235,6 +244,16 @@ section.what div.image div.scroll div.tags {
   -webkit-transform: translateX(-50%);
       -ms-transform: translateX(-50%);
           transform: translateX(-50%);
+  opacity: 0;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+@media (max-width: 640px) {
+  section.what div.image div.scroll div.tags {
+    width: 100%;
+    max-width: 100%;
+    margin-top: -100vh;
+  }
 }
 section.what div.image div.scroll div.tags small {
   position: absolute;
@@ -256,11 +275,21 @@ section.what div.image div.scroll div.tags small.show {
 }
 section.what div.image div.scroll div.tags small:nth-child(1) {
   top: 30%;
-  margin-left: 25%;
+  left: 25%;
+}
+@media (max-width: 640px) {
+  section.what div.image div.scroll div.tags small:nth-child(1) {
+    left: 5%;
+  }
 }
 section.what div.image div.scroll div.tags small:nth-child(2) {
   top: 15%;
   right: 20%;
+}
+@media (max-width: 640px) {
+  section.what div.image div.scroll div.tags small:nth-child(2) {
+    right: 5%;
+  }
 }
 section.what div.image div.scroll div.tags small:nth-child(3) {
   top: 50%;
@@ -282,6 +311,9 @@ section.what div.image div.scroll div.tags small:nth-child(5) {
 section.what div.image div.scroll div.tags small:nth-child(6) {
   top: 45%;
   right: 15%;
+}
+section.what div.image.show div.scroll div.tags {
+  opacity: 1;
 }
 
 section.services {
