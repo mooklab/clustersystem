@@ -13,13 +13,12 @@ section.what
     div.image
         margin-top: var(--big-gap)
         grid-column: full
-        // overflow-y: scroll
         display: grid
         grid-template-columns: [full-start] var(--full) [breakout-start] var(--breakout) [content-start] var(--content) [content-end] var(--breakout) [breakout-end] var(--full) [full-end]
-        // &::-webkit-scrollbar
-        //     opacity: 0
         z-index: 9
-        aspect-ratio: 960 / 2196
+        aspect-ratio: 960 / 1400
+        +screen(s)
+            aspect-ratio: 960 / 2100
         div.scroll
             position: relative
             grid-column: content
@@ -52,7 +51,7 @@ section.what
                 transform: translateX(-50%)
                 opacity: 0
                 transition: all .2s
-                +screen(s)
+                +screen(m)
                     width: 100%
                     max-width: 100%
                     margin-top: -100vh
@@ -87,6 +86,7 @@ section.what
                         left: 10%
                         +screen(m)
                             top: 40%
+
                     &:nth-child(4)
                         top: 60%
                         right: 35%

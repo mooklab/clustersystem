@@ -118,6 +118,7 @@ window.addEventListener('scroll', event => {
         
         // imageEl.offsetHeight
         percents = Math.abs( imageEl.getBoundingClientRect().top / ( imageEl.offsetHeight / 200 ) )
+        console.log(percents)
         imageEl.classList.add('show')
 
         tags.forEach( (tag, index) => {
