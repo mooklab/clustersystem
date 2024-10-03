@@ -25,14 +25,13 @@ section.what
             grid-column: content
 
             img
+                border: 1px solid red
                 position: sticky
                 top: 15vh
                 margin-left: 50%
                 height: 70vh
+                max-width: unset
                 aspect-ratio: 960 / 732
-                // max-width: unset
-                max-height: 1000px
-                min-height: 700px
                 transform: translateX(-50%)
                 object-fit: contain
                 object-position: center center
@@ -41,15 +40,14 @@ section.what
                     min-height: 500px
 
             div.tags
+                border: 1px solid green
                 position: sticky
-                margin-top: -100%
+                margin-top: calc( -732% / (960 / 100) )
                 top: 15vh
                 margin-left: 50%
                 height: 70vh
                 aspect-ratio: 960 / 732
                 max-width: unset
-                max-height: 1000px
-                min-height: 700px
                 transform: translateX(-50%)
                 opacity: 0
                 transition: all .2s
