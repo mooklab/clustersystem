@@ -13,7 +13,7 @@ mixin feature(title, count)
 section.features
     div.container
 
-        h2 Предусмотренные #[br]#[span проектом] возможности.
+        h2 Предусмотренные #[span проектом] возможности.
 
         div.tabs
 
@@ -28,7 +28,8 @@ section.features
                 div.swiper-wrapper
                     -for(x=0; x<=3; x++)
                         div.swiper-slide
-                            img(src="images/screen.webp", alt="")
+                            div.image
+                                img(src="images/screen.webp", alt="")
                             div.text.observe.afl
                                 +feature('Освещение вкл/выкл', '12 зон')
                                 +feature('Диммируемый свет', '5 зон')

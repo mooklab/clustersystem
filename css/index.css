@@ -203,64 +203,37 @@ section.what div.image {
   display: grid;
   grid-template-columns: [full-start] var(--full) [breakout-start] var(--breakout) [content-start] var(--content) [content-end] var(--breakout) [breakout-end] var(--full) [full-end];
   z-index: 9;
-  aspect-ratio: 960/1400;
+  height: 210vh;
 }
-@media (max-width: 640px) {
-  section.what div.image {
-    aspect-ratio: 960/2100;
-  }
-}
-section.what div.image div.scroll {
-  position: relative;
+section.what div.sticky {
+  position: sticky;
   grid-column: content;
-}
-section.what div.image div.scroll img {
-  display: block;
-  position: sticky;
   top: 15vh;
-  margin-left: 50%;
   height: 70vh;
-  max-width: unset;
   aspect-ratio: 960/732;
+  margin-left: 50%;
   -webkit-transform: translateX(-50%);
       -ms-transform: translateX(-50%);
           transform: translateX(-50%);
-  -o-object-fit: contain;
-     object-fit: contain;
-  -o-object-position: center center;
-     object-position: center center;
 }
-@media (max-width: 640px) {
-  section.what div.image div.scroll img {
-    max-width: unset;
-    min-height: 500px;
-  }
-}
-section.what div.image div.scroll div.tags {
-  position: sticky;
-  margin-top: -76.25%;
-  top: 15vh;
-  margin-left: 50%;
-  height: 70vh;
-  aspect-ratio: 960/732;
-  max-width: unset;
-  -webkit-transform: translateX(-50%);
-      -ms-transform: translateX(-50%);
-          transform: translateX(-50%);
-  opacity: 0;
-  -webkit-transition: all 0.2s;
-  transition: all 0.2s;
+section.what div.tags {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 @media (max-width: 960px) {
-  section.what div.image div.scroll div.tags {
-    width: 100%;
-    max-width: 100%;
-    margin-top: -100vh;
+  section.what div.tags {
+    max-width: 100vw;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%);
   }
 }
-section.what div.image div.scroll div.tags small {
+section.what div.tags small {
   position: absolute;
-  display: block;
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
@@ -270,53 +243,48 @@ section.what div.image div.scroll div.tags small {
   background: linear-gradient(90deg, #06f 0%, #7000ff 100%);
   color: white;
   opacity: 0;
-  -webkit-transition: all 0.5s;
-  transition: all 0.5s;
 }
-section.what div.image div.scroll div.tags small.show {
+section.what div.tags small.show {
   opacity: 1;
 }
-section.what div.image div.scroll div.tags small:nth-child(1) {
+section.what div.tags small:nth-child(1) {
   top: 30%;
   left: 25%;
 }
 @media (max-width: 640px) {
-  section.what div.image div.scroll div.tags small:nth-child(1) {
+  section.what div.tags small:nth-child(1) {
     left: 5%;
   }
 }
-section.what div.image div.scroll div.tags small:nth-child(2) {
+section.what div.tags small:nth-child(2) {
   top: 15%;
   right: 20%;
 }
 @media (max-width: 640px) {
-  section.what div.image div.scroll div.tags small:nth-child(2) {
+  section.what div.tags small:nth-child(2) {
     right: 5%;
   }
 }
-section.what div.image div.scroll div.tags small:nth-child(3) {
+section.what div.tags small:nth-child(3) {
   top: 50%;
   left: 10%;
 }
 @media (max-width: 960px) {
-  section.what div.image div.scroll div.tags small:nth-child(3) {
+  section.what div.tags small:nth-child(3) {
     top: 40%;
   }
 }
-section.what div.image div.scroll div.tags small:nth-child(4) {
+section.what div.tags small:nth-child(4) {
   top: 60%;
   right: 35%;
 }
-section.what div.image div.scroll div.tags small:nth-child(5) {
+section.what div.tags small:nth-child(5) {
   top: 75%;
   left: 20%;
 }
-section.what div.image div.scroll div.tags small:nth-child(6) {
+section.what div.tags small:nth-child(6) {
   top: 45%;
   right: 15%;
-}
-section.what div.image.show div.scroll div.tags {
-  opacity: 1;
 }
 
 section.services {

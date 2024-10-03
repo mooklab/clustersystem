@@ -4,14 +4,14 @@ section.calculate
 
     div.container
         display: grid
-        grid-gap: var(--big-gap)
+        grid-gap: var(--medium-gap)
 
     div.item
         display: grid
         align-items: center
         grid-template-columns: 1fr max-content
         grid-gap: var(--gap)
-        padding: var(--gap) 0
+        padding: var(--small-gap) 0
         +screen(s)
             grid-template-columns: 1fr
 
@@ -28,3 +28,8 @@ section.calculate
                 +screen(s)
                     border-left: unset
                     padding-left: unset
+
+        small
+            display: block
+            font-size: 16px
+            line-height: 1.5em
