@@ -210,6 +210,7 @@ section.what div.image div.scroll {
   grid-column: content;
 }
 section.what div.image div.scroll img {
+  display: block;
   border: 1px solid red;
   position: sticky;
   top: 15vh;
