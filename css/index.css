@@ -211,7 +211,6 @@ section.what div.image div.scroll {
 }
 section.what div.image div.scroll img {
   display: block;
-  border: 1px solid red;
   position: sticky;
   top: 15vh;
   margin-left: 50%;
@@ -233,7 +232,6 @@ section.what div.image div.scroll img {
   }
 }
 section.what div.image div.scroll div.tags {
-  border: 1px solid green;
   position: sticky;
   margin-top: -76.25%;
   top: 15vh;
