@@ -228,7 +228,7 @@ section.features div.tabs_contents div.swiper-slide {
 section.features div.tabs_contents div.image {
   position: relative;
   width: 100%;
-  height: 100%;
+  aspect-ratio: 1/1;
 }
 section.features div.tabs_contents div.image img {
   position: absolute;
