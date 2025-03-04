@@ -234,6 +234,8 @@ section.subservices div.grid a.item:hover img {
   -webkit-transform: scale(1.05);
       -ms-transform: scale(1.05);
           transform: scale(1.05);
+  -webkit-filter: blur(5px);
+          filter: blur(5px);
 }
 section.subservices div.grid a.item:hover h3 {
   opacity: 0;
